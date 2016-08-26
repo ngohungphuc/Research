@@ -10,6 +10,9 @@ module.exports = function(grunt) {
 
     //Code example 05-coffeescript Load the plugin that provides the "coffee" task.
     grunt.loadNpmTasks('grunt-contrib-coffee');
+
+    //Code example 06-jade
+    grunt.loadNpmTasks('grunt-contrib-jade');
     // configure grunt
     grunt.initConfig({
         uglify: {
@@ -47,6 +50,15 @@ module.exports = function(grunt) {
                     'Grunt/build/bazz.js': 'Grunt/src/*.coffee'
                 }
             }
+        },
+        //Code example 06-jade
+        jade: {
+            target1: {
+                files: {
+                    "Grunt/build/foo.html": "Grunt/src/foo.jade",
+                    "Grunt/build/bar.html": "Grunt/src/bar.jade",
+                }
+            }
         }
     });
 
@@ -69,8 +81,11 @@ module.exports = function(grunt) {
     });
 
     //Code example 04-linting
-    grunt.registerTask('jshintnoti', ['jshint']);
+    grunt.registerTask('jshinttask', ['jshint']);
 
     //Code example 05-coffeescript
     grunt.registerTask('coffeetask', ['coffee']);
+
+    //Code example 06-jade
+    grunt.registerTask('jadetask', ['jade']);
 };
