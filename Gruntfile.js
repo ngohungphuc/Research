@@ -13,6 +13,10 @@ module.exports = function(grunt) {
                 src: 'Grunt/js/foo.js',
                 dest: 'Grunt/js/foo.min.js'
             }
+        },
+        //Code example 03-simple-config
+        bar: {
+          foo: 42
         }
     });
 
@@ -24,5 +28,11 @@ module.exports = function(grunt) {
     //Code example 02-simple-task
     grunt.registerTask('foo', function() {
         console.log('Foo task is running....');
+    });
+    //Code example 03-simple-config
+    grunt.registerTask('bar', function() {
+        var bar = grunt.config.get('bar');
+        var bazz = bar.foo + 7;
+        grunt.log.writeln("Bazz is " + bazz);
     });
 };
