@@ -21,4 +21,8 @@ module.exports = function(grunt) {
 
     //Default task
     grunt.registerTask('default', ['uglify']);
+    //Code example 02-simple-task
+    grunt.registerTask('foo', function() {
+        console.log('Foo task is running....');
+    });
 };
