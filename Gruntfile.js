@@ -16,6 +16,9 @@ module.exports = function(grunt) {
 
     //Code example 07-stylus
     grunt.loadNpmTasks('grunt-contrib-stylus');
+
+    //Code example 08-concatenate
+    grunt.loadNpmTasks('grunt-contrib-concat');
     // configure grunt
     grunt.initConfig({
         uglify: {
@@ -70,6 +73,14 @@ module.exports = function(grunt) {
                     "Grunt/build/foo.css": "Grunt/src/foo.styl"
                 }
             }
+        },
+        //Code example 08-concatenate
+        concat: {
+            target1: {
+                files: {
+                    "Grunt/build/abc.js": ["Grunt/src/a.js", "Grunt/src/b.js", "Grunt/src/c.js"]
+                }
+            }
         }
     });
 
@@ -102,4 +113,7 @@ module.exports = function(grunt) {
 
     //Code example 07-stylus
     grunt.registerTask('stylustask', ['stylus']);
+
+    //Code example 08-concatenate
+    grunt.registerTask('concatenatetask', ['concat']);
 };
