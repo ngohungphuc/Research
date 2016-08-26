@@ -5,7 +5,8 @@ module.exports = function(grunt) {
 
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
-
+    //Code example 04-linting
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     // configure grunt
     grunt.initConfig({
         uglify: {
@@ -16,7 +17,18 @@ module.exports = function(grunt) {
         },
         //Code example 03-simple-config
         bar: {
-          foo: 42
+            foo: 42
+        },
+        //Code example 04-linting
+        jshint: {
+            options: {
+                //ensures that curly braces are always used in if, for, and while statements;
+                curly: true,
+                //ensures that strict equality === is always used.
+                eqeqeq: true
+            },
+            //from src and subdirectory
+            target1: ['Gruntfile.js', 'Grunt/src/**/*.js']
         }
     });
 
@@ -35,4 +47,6 @@ module.exports = function(grunt) {
         var bazz = bar.foo + 7;
         grunt.log.writeln("Bazz is " + bazz);
     });
+    //Code example 04-linting
+    grunt.registerTask('jshintnoti', ['jshint']);
 };
