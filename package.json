@@ -21,6 +21,8 @@
     "grunt-contrib-nodeunit": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-coffee": "*",
-    "grunt-contrib-jade": "*"
+    "grunt-contrib-jade": "*",
+    "grunt-contrib-stylus": "*",
+    "grunt-contrib-sass":"*"
   }
 }

@@ -13,6 +13,9 @@ module.exports = function(grunt) {
 
     //Code example 06-jade
     grunt.loadNpmTasks('grunt-contrib-jade');
+
+    //Code example 07-stylus
+    grunt.loadNpmTasks('grunt-contrib-stylus');
     // configure grunt
     grunt.initConfig({
         uglify: {
@@ -59,6 +62,14 @@ module.exports = function(grunt) {
                     "Grunt/build/bar.html": "Grunt/src/bar.jade",
                 }
             }
+        },
+        //Code example 07-stylus
+        stylus: {
+            target1: {
+                files: {
+                    "Grunt/build/foo.css": "Grunt/src/foo.styl"
+                }
+            }
         }
     });
 
@@ -88,4 +99,7 @@ module.exports = function(grunt) {
 
     //Code example 06-jade
     grunt.registerTask('jadetask', ['jade']);
+
+    //Code example 07-stylus
+    grunt.registerTask('stylustask', ['stylus']);
 };
