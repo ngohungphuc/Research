@@ -1,27 +1,24 @@
 // our wrapper function (required by grunt and its plugins)
 // all configuration goes inside this function
-
+//Code example 01-minify
 module.exports = function(grunt) {
-	// configure grunt
-	grunt.initConfig({
-		// get the configuration info from package.json file
-      	// this way we can use things like name and version (pkg.name)
-      	pkg: grunt.file.readJson('package.json');
 
-      	// all of our configuration goes here
-      	uglify: {
-      		// uglify task configuration
-      		options: {},
-      		build: {}
-      	}
-  	});
+    // Load the plugin that provides the "uglify" task.
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  	// log something
-  	grunt.log.write('Grunt log message\n');
+    // configure grunt
+    grunt.initConfig({
+        uglify: {
+            target: {
+                src: 'Grunt/js/foo.js',
+                dest: 'Grunt/js/foo.min.js'
+            }
+        }
+    });
 
-  	// Load the plugin that provides the "uglify" task.
-  	grunt.loadNpmTasks('grunt-contrib-uglify');
+    // log something
+    grunt.log.write('Grunt ex 1\n');
 
-  	//Default task
-  	grunt.registerTask('default', ['uglify']);
-}
+    //Default task
+    grunt.registerTask('default', ['uglify']);
+};
