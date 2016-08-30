@@ -1,7 +1,13 @@
 // our wrapper function (required by grunt and its plugins)
 // all configuration goes inside this function
 
+
+//Code example 09-deploy-log-task
 var fs = require('fs');
+//Code example 13-async-webget
+var request = require('request');
+var url = 'https://raw.githubusercontent.com/jpillora/gswg-examples/master/README.md';
+
 module.exports = function(grunt) {
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -166,5 +172,21 @@ module.exports = function(grunt) {
             grunt.file.copy(file.src, file.dest);
         });
         grunt.log.writeln('Copied' + this.files.length + ' files');
+    });
+
+    //Code example 13-async-webget
+    grunt.registerTask('webget', function() {
+        var done = this.async();
+        request(url, function(err, response, contents) {
+            if (err) {
+                done(err);
+            } else if (response.statusCode !== 200) {
+                done(new Error('Not ok'));
+            } else {
+                grunt.file.write('Grunt/build/Ex13.md', contents);
+                grunt.log.ok('Ex13.md successfully created');
+                done();
+            }
+        });
     });
 };
