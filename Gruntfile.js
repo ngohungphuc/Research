@@ -1,6 +1,7 @@
 // our wrapper function (required by grunt and its plugins)
 // all configuration goes inside this function
-//Code example 01-minify
+
+var fs = require('fs');
 module.exports = function(grunt) {
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -19,6 +20,8 @@ module.exports = function(grunt) {
 
     //Code example 08-concatenate
     grunt.loadNpmTasks('grunt-contrib-concat');
+
+    //Code example 09-deploy-log-task
     // configure grunt
     grunt.initConfig({
         uglify: {
@@ -116,4 +119,11 @@ module.exports = function(grunt) {
 
     //Code example 08-concatenate
     grunt.registerTask('concatenatetask', ['concat']);
+
+    //Code example 09-deploy-log-task
+    grunt.registerTask('log-deploy', function() {
+        var message = 'Deployment on ' + new Date();
+        fs.appendFileSync('deploy.log' , message + '\n');
+        grunt.log.writeln('Append "' + message + '"');  
+    });
 };
