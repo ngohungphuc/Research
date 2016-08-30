@@ -123,7 +123,12 @@ module.exports = function(grunt) {
     //Code example 09-deploy-log-task
     grunt.registerTask('log-deploy', function() {
         var message = 'Deployment on ' + new Date();
-        fs.appendFileSync('deploy.log' , message + '\n');
-        grunt.log.writeln('Append "' + message + '"');  
+        fs.appendFileSync('deploy.log', message + '\n');
+        grunt.log.writeln('Append "' + message + '"');
+    });
+
+    //Code example 10-task-object
+    grunt.registerTask('task-object', function() {
+        console.log('The "%foo" has arguments %j', this.name, this.args);
     });
 };
