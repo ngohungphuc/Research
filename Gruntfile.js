@@ -84,6 +84,21 @@ module.exports = function(grunt) {
                     "Grunt/build/abc.js": ["Grunt/src/a.js", "Grunt/src/b.js", "Grunt/src/c.js"]
                 }
             }
+        },
+        //Code example 12-copy-multi-task
+        copy: {
+            target1: {
+                files: {
+                    'Grunt/build/file1.txt': 'Grunt/src/file1.txt',
+                    'Grunt/build/file2.txt': 'Grunt/src/file2.txt',
+                }
+            },
+            target2: {
+                files: {
+                    'Grunt/build/file3.txt': 'Grunt/src/file3.txt',
+                    'Grunt/build/file4.txt': 'Grunt/src/file4.txt',
+                }
+            }
         }
     });
 
@@ -144,4 +159,12 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('deploy', ['build', 'test', 'upload']);
+
+    //Code example 12-copy-multi-task
+    grunt.registerMultiTask('copy', function() {
+        this.files.forEach(function(file) {
+            grunt.file.copy(file.src, file.dest);
+        });
+        grunt.log.writeln('Copied' + this.files.length + ' files');
+    });
 };
