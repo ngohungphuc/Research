@@ -1,7 +1,5 @@
 // our wrapper function (required by grunt and its plugins)
 // all configuration goes inside this function
-
-
 //Code example 09-deploy-log-task
 var fs = require('fs');
 //Code example 13-async-webget
