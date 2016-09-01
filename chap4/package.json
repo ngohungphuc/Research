@@ -1,0 +1,26 @@
+{
+  "name": "singlepageapp",
+  "version": "1.0.0",
+  "description": "Building Single Page Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoangphucvu/Grunt-Gulp.git"
+  },
+  "keywords": [
+    "Grunt",
+    "gulp"
+  ],
+  "author": "Tony Ngo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoangphucvu/Grunt-Gulp/issues"
+  },
+  "homepage": "https://github.com/hoangphucvu/Grunt-Gulp#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  }
+}
