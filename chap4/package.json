@@ -21,6 +21,9 @@
   },
   "homepage": "https://github.com/hoangphucvu/Grunt-Gulp#readme",
   "devDependencies": {
-    "grunt": "^1.0.1"
+    "grunt": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-jade": "*",
+    "grunt-contrib-stylus": "*"
   }
 }
