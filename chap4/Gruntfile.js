@@ -46,12 +46,26 @@ module.exports = function(grunt) {
             }
         },
         cssmin: {
-        	compress: {
+            compress: {
                 src: "<%= stylus.build.dest %>",
                 dest: "<%= stylus.build.dest %>"
             },
+        },
+        htmlmin: {
+            options: {
+                removeComments: true,
+                collapseWhitespace: true,
+                collapseBooleanAttributes: true,
+                removeAttributeQuotes: true,
+                removeRedundantAttributes: true,
+                removeOptionalTags: true
+            },
+            compress: {
+                src: "<%= jade.build.dest %>",
+                dest: "<%= jade.build.dest %>"
+            }
         }
     });
     grunt.log.write('Grunt is running\n');
-    grunt.registerTask('default', ['coffee', 'stylus', 'jade', 'uglify','cssmin']);
+    grunt.registerTask('default', ['coffee', 'stylus', 'jade', 'uglify', 'cssmin']);
 };
