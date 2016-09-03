@@ -1,4 +1,17 @@
+
 module.exports = function(grunt) {
+	// Initialize environment
+	var env = grunt.option('env') || 'dev';
+	// Environment specific tasks
+	if (env === 'prod') {
+		grunt.registerTask('scripts', ['coffee','uglify']);
+		grunt.registerTask('styles', ['stylus','cssmin']);
+		grunt.registerTask('views', ['jade','htmlmin']);
+	} else {
+		grunt.registerTask('scripts', ['coffee']);
+		grunt.registerTask('styles', ['stylus']);
+		grunt.registerTask('views', ['jade']);
+	}
     grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-jade');
@@ -67,5 +80,7 @@ module.exports = function(grunt) {
         }
     });
     grunt.log.write('Grunt is running\n');
-    grunt.registerTask('default', ['coffee', 'stylus', 'jade', 'uglify', 'cssmin']);
+    //grunt.registerTask('default', ['coffee', 'stylus', 'jade', 'uglify', 'cssmin']);
+    grunt.registerTask('default', ['scripts', 'styles','views']);
+
 };
