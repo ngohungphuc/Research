@@ -2,7 +2,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-jade');
-
+    grunt.loadNpmTasks("grunt-contrib-uglify");
+    grunt.loadNpmTasks("grunt-contrib-cssmin");
+    grunt.loadNpmTasks("grunt-contrib-htmlmin");
     grunt.initConfig({
         coffee: {
             build: {
@@ -12,8 +14,8 @@ module.exports = function(grunt) {
         },
         stylus: {
             options: {
-                compress: false,
-                linenos:true
+                //compress: false,
+                //linenos:true
             },
             build: {
                 src: 'src/styles/app.styl',
@@ -28,8 +30,28 @@ module.exports = function(grunt) {
                 src: 'src/views/app.jade',
                 dest: 'build/app.html'
             }
+        },
+        uglify: {
+            compress: {
+                src: "<%= coffee.build.dest %>",
+                dest: "<%= coffee.build.dest %>"
+            },
+            options: {
+                compress: {
+                    global_defs: {
+                        "DEBUG": false
+                    },
+                    dead_code: true
+                }
+            }
+        },
+        cssmin: {
+        	compress: {
+                src: "<%= stylus.build.dest %>",
+                dest: "<%= stylus.build.dest %>"
+            },
         }
     });
     grunt.log.write('Grunt is running\n');
-    grunt.registerTask('default', ['coffee', 'stylus', 'jade']);
+    grunt.registerTask('default', ['coffee', 'stylus', 'jade', 'uglify','cssmin']);
 };
