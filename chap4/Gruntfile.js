@@ -18,6 +18,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-cssmin");
     grunt.loadNpmTasks("grunt-contrib-htmlmin");
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.initConfig({
         coffee: {
             build: {
@@ -77,10 +78,26 @@ module.exports = function(grunt) {
                 src: "<%= jade.build.dest %>",
                 dest: "<%= jade.build.dest %>"
             }
+        },
+        watch: {
+        	scripts: {
+        		files: "src/scripts/**/*.coffee",
+        		tasks: "scripts"
+        	},
+        	styles: {
+        		files: "src/styles/**/*.styl",
+        		tasks: "styles"
+        	},
+        	views: {
+        		files: "src/views/**/*.jade",
+        		task: "views"
+        	}
         }
     });
     grunt.log.write('Grunt is running\n');
     //grunt.registerTask('default', ['coffee', 'stylus', 'jade', 'uglify', 'cssmin']);
-    grunt.registerTask('default', ['scripts', 'styles','views']);
+    //grunt.registerTask('default', ['scripts', 'styles','views']);
+    grunt.registerTask('build', ['scripts','styles','views']);
+    grunt.registerTask('default', ['build', 'watch']);
 
 };
