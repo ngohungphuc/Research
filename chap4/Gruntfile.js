@@ -1,17 +1,16 @@
-
 module.exports = function(grunt) {
-	// Initialize environment
-	var env = grunt.option('env') || 'dev';
-	// Environment specific tasks
-	if (env === 'prod') {
-		grunt.registerTask('scripts', ['coffee','uglify']);
-		grunt.registerTask('styles', ['stylus','cssmin']);
-		grunt.registerTask('views', ['jade','htmlmin']);
-	} else {
-		grunt.registerTask('scripts', ['coffee']);
-		grunt.registerTask('styles', ['stylus']);
-		grunt.registerTask('views', ['jade']);
-	}
+    // Initialize environment
+    var env = grunt.option('env') || 'dev';
+    // Environment specific tasks
+    if (env === 'prod') {
+        grunt.registerTask('scripts', ['coffee', 'uglify']);
+        grunt.registerTask('styles', ['stylus', 'cssmin']);
+        grunt.registerTask('views', ['jade', 'htmlmin']);
+    } else {
+        grunt.registerTask('scripts', ['coffee']);
+        grunt.registerTask('styles', ['stylus']);
+        grunt.registerTask('views', ['jade']);
+    }
     grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-jade');
@@ -19,6 +18,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-cssmin");
     grunt.loadNpmTasks("grunt-contrib-htmlmin");
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks("mocha");
     grunt.initConfig({
         coffee: {
             build: {
@@ -80,24 +80,24 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-        	scripts: {
-        		files: "src/scripts/**/*.coffee",
-        		tasks: "scripts"
-        	},
-        	styles: {
-        		files: "src/styles/**/*.styl",
-        		tasks: "styles"
-        	},
-        	views: {
-        		files: "src/views/**/*.jade",
-        		task: "views"
-        	}
+            scripts: {
+                files: "src/scripts/**/*.coffee",
+                tasks: "scripts"
+            },
+            styles: {
+                files: "src/styles/**/*.styl",
+                tasks: "styles"
+            },
+            views: {
+                files: "src/views/**/*.jade",
+                task: "views"
+            }
         }
     });
     grunt.log.write('Grunt is running\n');
     //grunt.registerTask('default', ['coffee', 'stylus', 'jade', 'uglify', 'cssmin']);
     //grunt.registerTask('default', ['scripts', 'styles','views']);
-    grunt.registerTask('build', ['scripts','styles','views']);
-    grunt.registerTask('default', ['build', 'watch']);
-
+    //grunt.registerTask('build', ['scripts','styles','views']);
+    //grunt.registerTask('default', ['build', 'watch']);
+    grunt.registerTask('default', ['mocha']);
 };
