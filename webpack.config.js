@@ -8,5 +8,18 @@ module.exports = {
     output: {
         filename: "bundle.js"
     },
-    watch:true
+    //watch:true
+    module:{
+        loaders:[
+            {
+                test: /\.es6$/,
+                exclude:/node_modules/,
+                loader:'babel-loader'
+            }
+        ]
+    },
+    //look for either js or es6 extension
+    resolve:{
+        extensions:['','.js','.es6']
+    }
 };
