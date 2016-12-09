@@ -3,30 +3,30 @@
  */
 module.exports = {
     entry: [
-        "./app.js","./util.js"
+        "./app.js", "./util.js"
     ],
     output: {
         filename: "bundle.js"
     },
     //watch:true
-    module:{
-        preLoaders:[
+    module: {
+        preLoaders: [
             {
                 test: /\.js%/,
-                exclude:/node_modules/,
-                loader:'jshint-loader'
+                exclude: /node_modules/,
+                loader: 'jshint-loader'
             }
         ],
-        loaders:[
+        loaders: [
             {
                 test: /\.es6$/,
-                exclude:/node_modules/,
-                loader:'babel-loader'
+                exclude: /node_modules/,
+                loader: 'babel-loader'
             }
         ]
     },
     //look for either js or es6 extension
-    resolve:{
-        extensions:['','.js','.es6']
+    resolve: {
+        extensions: ['', '.js', '.es6']
     }
 };

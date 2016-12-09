@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server"
   },
   "keywords": [],
   "author": "Joe Eames",
@@ -16,6 +16,7 @@
     "jshint": "^2.8.0",
     "jshint-loader": "^0.8.3",
     "node-libs-browser": "^0.5.3",
+    "strip-loader": "^0.1.2",
     "webpack": "^1.12.9"
   }
 }
