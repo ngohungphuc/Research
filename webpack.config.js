@@ -1,12 +1,22 @@
 /**
  * Created by phuc.ngo on 9/12/2016.
  */
+var path = require('path');
 module.exports = {
+    //look for file in js folder
+    context:path.resolve('js'),
     entry: [
         "./app.js", "./util.js"
     ],
     output: {
-        filename: "bundle.js"
+        //put bundle file in this dir,
+        //setup virtual path 
+        path:path.resolve('build/js'),
+        publicPath:'/public/assets/js',
+        filename: 'bundle.js'
+    },
+    devServer:{
+        contentBase:'public'
     },
     //watch:true
     module: {
