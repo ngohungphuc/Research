@@ -6,7 +6,7 @@ module.exports = {
     //look for file in js folder
     context:path.resolve('js'),
     entry: [
-        "./app.js", "./util.js"
+        "./app", "./util.js"
     ],
     output: {
         //put bundle file in this dir,
