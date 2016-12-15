@@ -2,7 +2,7 @@
  * Created by phuc.ngo on 9/12/2016.
  */
 var path = require('path');
-var webpack = require('webpack');
+/*var webpack = require('webpack');
 var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('shared.js');
 module.exports = {
     //look for file in js folder
@@ -14,7 +14,7 @@ module.exports = {
     },
     output: {
         //put bundle file in this dir,
-        //setup virtual path 
+        //setup virtual path
         path: path.resolve('build/js'),
         publicPath: '/public/assets/js',
         //[name] to match the name of the entry
@@ -26,7 +26,8 @@ module.exports = {
     },
     //watch:true
     module: {
-        preLoaders: [{
+        //preLoader is use to run specific task before run the app
+        /*preLoaders: [{
             test: /\.js%/,
             exclude: /node_modules/,
             loader: 'jshint-loader'
@@ -41,4 +42,31 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.es6']
     }
-};
+};*/
+
+
+module.exports = {
+    context: path.resolve('js'),
+    entry: ["./app"],
+    output: {
+        path: path.resolve('build/js/'),
+        publicPath: '/public/assets/js/',
+        filename: "bundle.js"
+    },
+
+    devServer: {
+        contentBase: 'public'
+    },
+
+    module: {
+        loaders: [{
+            test: /\.css$/,
+            exclude: /node_modules/,
+            loader: "style-loader!css-loader"
+        }]
+    },
+
+    resolve: {
+        extensions: ['', '.js', '.es6']
+    }
+}
