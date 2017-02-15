@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"webpack -d --watch",
-    "prod":"webpack -p"
+    "dev": "webpack -d --watch",
+    "prod": "webpack -p"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "html-webpack-plugin": "^2.28.0",
     "webpack": "^2.2.0"
   }
 }
