@@ -72,22 +72,14 @@ var home =
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-module.exports = function(message) {
-    alert(`Welcome ${message}`);
-}
-
+eval("\nmodule.exports = function(message) {\n    debugger;\n    alert(`Welcome ${message}`);\n}\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./welcome.js\n// module id = 0\n// module chunks = 0\n\n//# sourceURL=webpack:///./welcome.js?");
 
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-let welcome = __webpack_require__(0);
-welcome('home');
-exports.welcome = welcome;
-
+eval("\nlet welcome = __webpack_require__(0);\nwelcome('home');\nexports.welcome = welcome;\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./home.js\n// module id = 1\n// module chunks = 0\n\n//# sourceURL=webpack:///./home.js?");
 
 /***/ })
 /******/ ]);
