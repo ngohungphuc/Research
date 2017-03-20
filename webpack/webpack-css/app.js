@@ -1,1 +1,4 @@
-require('./style.css');
+require('./styles.scss');
+
+const name = "tony";
+console.log(name);
