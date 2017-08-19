@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../Automation-Test/.idea/Automation-Test.iml" filepath="$PROJECT_DIR$/../../Automation-Test/.idea/Automation-Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/../.idea/Awesome-Py.iml" filepath="$PROJECT_DIR$/../.idea/Awesome-Py.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/GettingStart.iml" filepath="$PROJECT_DIR$/.idea/GettingStart.iml" />
     </modules>
