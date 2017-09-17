@@ -22,4 +22,8 @@ insertBut = Button(toolbar, text="Insert Image", command=doNothing)
 # 2px of padding
 insertBut.pack(side=LEFT, padx=2, pady=2)
 toolbar.pack(side=TOP, fill=X)
+
+# status bar
+status = Label(root, text="Prepare", bd=1, relief=SUNKEN, anchor=W)
+status.pack(side=BOTTOM, fill=X)
 root.mainloop()
