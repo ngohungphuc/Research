@@ -15,4 +15,11 @@ subMenu = Menu(menu)
 menu.add_cascade(label="File", menu=subMenu)
 subMenu.add_command(label="Now Project", command=doNothing)
 subMenu.add_separator()
+
+# toolbar
+toolbar = Frame(root, bg="blue")
+insertBut = Button(toolbar, text="Insert Image", command=doNothing)
+# 2px of padding
+insertBut.pack(side=LEFT, padx=2, pady=2)
+toolbar.pack(side=TOP, fill=X)
 root.mainloop()
