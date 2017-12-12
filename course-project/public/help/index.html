@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Help</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="/src/css/help.css">
+</head>
+<body>
+
+<div id="app">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">PWAGram</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation. We hide it in small screens. -->
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+          <a class="mdl-navigation__link" href="/">Feed</a>
+          <a class="mdl-navigation__link" href="/settings">Settings</a>
+          <div class="drawer-option">
+            <button class="enable-notifications mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
+              Enable Notifications
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">PWAGram</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="/">Feed</a>
+        <a class="mdl-navigation__link" href="/help">Help</a>
+        <div class="drawer-option">
+          <button class="enable-notifications mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
+            Enable Notifications
+          </button>
+        </div>
+      </nav>
+    </div>
+    <main class="mdl-layout__content mat-typography">
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col text-center">
+         <h3>Need Help?</h3>
+          <p>Learn how to use this app and share your amazing memories with all your friends!</p>
+        </div>
+      </div>
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col text-center">
+          <h3>Contact Us!</h3>
+          <div>
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+              <i class="material-icons">call</i>
+            </button>
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+              <i class="material-icons">email</i>
+            </button>
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+              <i class="material-icons">chat_bubble</i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script defer src="/src/js/material.min.js"></script>
+<script src="/src/js/app.js"></script>
+</body>
+</html>
