@@ -1,4 +1,4 @@
-![logo](img/Progressive-web-app.jpg)
+<img src="img/Progressive-web-app.jpg" alt="Progressive-web-app" width="100%"/>
 
 ### Resource
 https://developers.google.com/web/fundamentals/primers/service-workers/
