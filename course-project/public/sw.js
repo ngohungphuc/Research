@@ -13,3 +13,11 @@ self.addEventListener("activate", function(event) {
   //ensure sw are loaded
   return self.clients.claim();
 });
+
+/**
+ * fetch event when browser fetch something like load js or css, img
+ */
+self.addEventListener("fetch", function(event) {
+  console.log("Fetching", event);
+  event.respondWith(fetch(event.request));
+});
