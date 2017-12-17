@@ -8,7 +8,8 @@ self.addEventListener("install", function(event) {
 /**
  * active event when browser install sw and use sw
  */
-self.addEventListener("active", function(event) {
+self.addEventListener("activate", function(event) {
   console.log("Activating Service worker", event);
+  //ensure sw are loaded
   return self.clients.claim();
 });
