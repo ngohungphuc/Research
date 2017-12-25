@@ -1,23 +1,14 @@
-/**
- * install event when browser install sw
- */
-self.addEventListener("install", function(event) {
-  console.log("Installing Service worker", event);
+
+self.addEventListener('install', function(event) {
+  console.log('[Service Worker] Installing Service Worker ...', event);
 });
 
-/**
- * active event when browser install sw and use sw
- */
-self.addEventListener("activate", function(event) {
-  console.log("Activating Service worker", event);
-  //ensure sw are loaded
+self.addEventListener('activate', function(event) {
+  console.log('[Service Worker] Activating Service Worker ....', event);
   return self.clients.claim();
 });
 
-/**
- * fetch event when browser fetch something like load js or css, img
- */
-self.addEventListener("fetch", function(event) {
-  console.log("Fetching", event);
+self.addEventListener('fetch', function(event) {
+  console.log('[Service Worker] Fetching something ....', event);
   event.respondWith(fetch(event.request));
 });
