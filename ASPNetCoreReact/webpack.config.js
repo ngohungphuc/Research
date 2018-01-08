@@ -1,13 +1,14 @@
 const path = require("path");
 const webpack = require("webpack");
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const extractCSS = new ExtractTextPlugin('allstyles.css');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const extractCSS = new ExtractTextPlugin("allstyles.css");
 
 module.exports = {
-  entry: "./wwwroot/source/app.js",
+  entry: { main: "./wwwroot/source/app.js" },
   output: {
     path: path.resolve(__dirname, "wwwroot/dist"),
-    filename: "bundle.js"
+    filename: "bundle.js",
+    publicPath: "dist/"
   },
   plugins: [
     extractCSS,
@@ -24,7 +25,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: extractCSS.extract(['css-loader?minimize'])
+        use: extractCSS.extract(["css-loader?minimize"])
       },
       {
         test: /\.js?$/,
