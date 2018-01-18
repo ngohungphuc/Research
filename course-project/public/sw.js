@@ -1,7 +1,7 @@
 self.addEventListener("install", function(event) {
   console.log("[Service Worker] Installing Service Worker ...", event);
   event.waitUntil(
-    caches.open("static").then(function(cache) {
+    caches.open("static-v2").then(function(cache) {
       console.log("Service Worker] Precaching app shell");
       //add new resource
       cache.addAll([
@@ -25,6 +25,19 @@ self.addEventListener("install", function(event) {
 
 self.addEventListener("activate", function(event) {
   console.log("[Service Worker] Activating Service Worker ....", event);
+  event.waitUntil(
+    caches.key().then(function(keyList) {
+      return Promise.all(
+        keyList.map(function(key) {
+          //delete old cache if the key not exist in storage
+          if (key !== "static-v2" && key !== "dynamic") {
+            console.log("Remove old cache");
+            return caches.delete(key);
+          }
+        })
+      );
+    })
+  );
   return self.clients.claim();
 });
 
@@ -34,12 +47,14 @@ self.addEventListener("fetch", function(event) {
       if (response) {
         return response;
       } else {
-        return fetch(event.request).then(function(res) {
-          return caches.open("dynamic").then(function(cache) {
-            cache.put(event.request.url, res.clone());
-            return res;
-          });
-        });
+        return fetch(event.request)
+          .then(function(res) {
+            return caches.open("dynamic").then(function(cache) {
+              cache.put(event.request.url, res.clone());
+              return res;
+            });
+          })
+          .catch(function(err) {});
       }
     })
   );
