@@ -32,9 +32,16 @@ shareImageButton.addEventListener("click", openCreatePostModal);
 
 closeCreatePostModalButton.addEventListener("click", closeCreatePostModal);
 
-function cardSaveButtonClicked(event){
-
+//cache on demand
+function cardSaveButtonClicked(event) {
+  if ("caches" in window) {
+    caches.open("user-requested").then(function(cache) {
+      cache.add("https://httpbin.org/get");
+      cache.add("/src/images/sf-boat.jpg");
+    });
+  }
 }
+
 function createCard() {
   var cardWrapper = document.createElement("div");
   cardWrapper.className = "shared-moment-card mdl-card mdl-shadow--2dp";
