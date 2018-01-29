@@ -43,25 +43,44 @@ var Comment = React.createClass({
 var CommentForm = React.createClass({
     render: function () {
         return (
-            <div className="commentForm">
-                Hello, world! I am a CommentForm.
-      </div>
+            <form className="commentForm">
+                <input type="text" placeholder="Your name" />
+                <input type="text" placeholder="Say something..." />
+                <input type="submit" value="Post" />
+            </form>
         );
     }
 });
 
 var CommentBox = React.createClass({
+    loadCommentsFromServer: function () {
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', this.props.url, true);
+        xhr.onload = function () {
+            var data = JSON.parse(xhr.responseText);
+            this.setState({ data: data });
+        }.bind(this);
+        xhr.send();
+    },
+    getInitialState: function () {
+        return { data: [] };
+    },
+    componentDidMount: function () {
+        this.loadCommentsFromServer();
+        window.setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+    },
     render: function () {
         return (
             <div className="commentBox">
                 <h1>Comments</h1>
-                <CommentList data={this.props.data} />
+                <CommentList data={this.state.data} />
                 <CommentForm />
             </div>
         );
     }
 });
+
 ReactDOM.render(
-    <CommentBox data={data} />,
+    <CommentBox url="/comments" />,
     document.getElementById('content')
 );
