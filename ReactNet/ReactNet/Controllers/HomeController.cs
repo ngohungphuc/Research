@@ -36,9 +36,9 @@ namespace ReactNet.Controllers
             };
         }
 
-        public IActionResult Index()
+        public ActionResult Index()
         {
-            return View();
+            return View(_comments);
         }
 
         [Route("comments")]
