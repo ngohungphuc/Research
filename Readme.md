@@ -89,3 +89,21 @@ check whether the given image contains a person's face or not. We would build a 
 dataset containing classes corresponding to these two classes: face and no-face. We then
 train the model based on the training samples we have. This trained model is then used for
 inference.
+
+### Preprocessing data
+
+We deal with a lot of raw data in the real world. Machine learning algorithms expect data to
+be formatted in a certain way before they start the training process. In order to prepare the
+data for ingestion by machine learning algorithms, we have to preprocess it and convert it
+into the right format.
+
+There are 4 preprocessing technique:
+
+* Binarization
+* Mean removal
+* Scaling
+* Normalization
+
+#### Binarization
+
+This process is used when we want to convert our numerical values into boolean values
