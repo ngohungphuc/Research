@@ -14,3 +14,8 @@ print("\nBinarized data:\n", data_binarized)
 print("\nBEFORE:")
 print("Mean =", input_data.mean(axis=0))
 print("Std deviation =", input_data.std(axis=0))
+
+data_scaled = preprocessing.scale(input_data)
+print("\nAFTER:")
+print("Mean =", data_scaled.mean(axis=0))
+print("Std deviation =", data_scaled.std(axis=0))
