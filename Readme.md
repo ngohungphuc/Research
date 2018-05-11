@@ -75,3 +75,17 @@ unsupervised learning.
   that we don't know exactly what the criteria of separation should be. Hence, an
   unsupervised learning algorithm needs to separate the given dataset into a number of
   groups in the best way possible.
+
+### What is classification?
+
+The process of classification is one such technique where we classify data into a given number of classes.
+During classification, we arrange data into a fixed number of categories so that it can be
+used most effectively and efficiently.
+
+In machine learning, classification solves the problem of identifying the category to which a
+new data point belongs. We build the classification model based on the training dataset
+containing data points and the corresponding labels. For example, let's say that we want to
+check whether the given image contains a person's face or not. We would build a training
+dataset containing classes corresponding to these two classes: face and no-face. We then
+train the model based on the training samples we have. This trained model is then used for
+inference.
