@@ -107,3 +107,9 @@ There are 4 preprocessing technique:
 #### Binarization
 
 This process is used when we want to convert our numerical values into boolean values
+
+#### Mean removal
+
+Removing the mean is a common preprocessing technique used in machine learning. It's
+usually useful to remove the mean from our feature vector, so that each feature is centered
+on zero. We do this in order to remove bias from the features in our feature vector.

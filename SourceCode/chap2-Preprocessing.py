@@ -9,3 +9,8 @@ input_data = np.array([[5.1, -2.9, 3.3],
 # Binarize data
 data_binarized = preprocessing.Binarizer(threshold=2.1).transform(input_data)
 print("\nBinarized data:\n", data_binarized)
+
+# Print mean and standard deviation
+print("\nBEFORE:")
+print("Mean =", input_data.mean(axis=0))
+print("Std deviation =", input_data.std(axis=0))
