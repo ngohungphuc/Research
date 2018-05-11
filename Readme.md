@@ -34,3 +34,19 @@ Below diagram illustrates how raw data convert to wisdom various level of proces
   represented in some way for a system to make sense of them. The languages of
   mathematical logic are frequently used here. If knowledge is represented
   efficiently, systems can be smarter and more intelligent.
+* **Planning** : This field deals with optimal planning that gives us maximum returns
+  with minimal costs. These software programs start with facts about the particular
+  situation and a statement of a goal. These programs are also aware of the facts of
+  the world, so that they know what the rules are. From this information, they
+  generate the most optimal plan to achieve the goal.
+* **Heuristics** : A heuristic is a technique used to solve a given problem that's
+  practical and useful in solving the problem in the short term, but not guaranteed
+  to be optimal. This is more like an educated guess on what approach we should
+  take to solve a problem. In AI, we frequently encounter situations where we
+  cannot check every single possibility to pick the best option. So we need to use
+  heuristics to achieve the goal. They are used extensively in AI in fields such as
+  robotics, search engines, and so on.
+* **Genetic programming**: Genetic programming is a way to get programs to solve a
+  task, by mating programs and selecting the fittest. The programs are encoded as a
+  set of genes, using an algorithm to get a program that is able to perform the given
+  task really well.
