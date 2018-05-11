@@ -1,6 +1,6 @@
-## Artificial Intelligence learning with Python
+# Artificial Intelligence learning with Python
 
-### What is Artificial Intelligence?
+## What is Artificial Intelligence?
 
 Artificial Intelligence (AI) is a way to make machines think and behave intelligently. These
 machines are controlled by software inside them, so AI has a lot to do with intelligent
@@ -50,3 +50,28 @@ Below diagram illustrates how raw data convert to wisdom various level of proces
   task, by mating programs and selecting the fittest. The programs are encoded as a
   set of genes, using an algorithm to get a program that is able to perform the given
   task really well.
+
+## Classification and Regression Using Supervised Learning
+
+### Supervised versus unsupervised learning
+
+One of the most common ways to impart artificial intelligence into a machine is through
+machine learning. The world of machine learning is broadly divided into supervised and
+unsupervised learning.
+
+* **Supervised learning** refers to the process of building a machine learning model that is
+  based on labeled training data. For example, let's say that we want to build a system to
+  automatically predict the income of a person, based on various parameters such as age,
+  education, location, and so on. To do this, we need to create a database of people with all
+  the necessary details and label it. By doing this, we are telling our algorithm what
+  parameters correspond to what income. Based on this mapping, the algorithm will learn
+  how to calculate the income of a person using the parameters provided to it.
+
+* **Unsupervised learning** refers to the process of building a machine learning model without
+  relying on labeled training data. In some sense, it is the opposite of what we just discussed
+  in the previous paragraph. Since there are no labels available, you need to extract insights
+  based on just the data given to you. For example, let's say that we want to build a system
+  where we have to separate a set of data points into multiple groups. The tricky thing here is
+  that we don't know exactly what the criteria of separation should be. Hence, an
+  unsupervised learning algorithm needs to separate the given dataset into a number of
+  groups in the best way possible.
