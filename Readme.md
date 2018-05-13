@@ -113,3 +113,18 @@ This process is used when we want to convert our numerical values into boolean v
 Removing the mean is a common preprocessing technique used in machine learning. It's
 usually useful to remove the mean from our feature vector, so that each feature is centered
 on zero. We do this in order to remove bias from the features in our feature vector.
+
+### Scaling
+
+In our feature vector, the value of each feature can vary between many random values. So it
+becomes important to scale those features so that it is a level playing field for the machine
+learning algorithm to train on.
+
+### Normalization
+
+We use the process of normalization to modify the values in the feature vector so that we
+can measure them on a common scale. In machine learning, we use many different forms of
+normalization. Some of the most common forms of normalization aim to modify the values
+so that they sum up to 1. L1 normalization, which refers to Least Absolute Deviations,
+works by making sure that the sum of absolute values is 1 in each row. L2 normalization,
+which refers to least squares, works by making sure that the sum of squares is 1.
