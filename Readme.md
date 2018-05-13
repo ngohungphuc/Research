@@ -128,3 +128,16 @@ normalization. Some of the most common forms of normalization aim to modify the 
 so that they sum up to 1. L1 normalization, which refers to Least Absolute Deviations,
 works by making sure that the sum of absolute values is 1 in each row. L2 normalization,
 which refers to least squares, works by making sure that the sum of squares is 1.
+
+### Label encoding
+
+When we perform classification, we usually deal with a lot of labels. These labels can be in
+the form of words, numbers, or something else. The machine learning functions in sklearn
+expect them to be numbers. So if they are already numbers, then we can use them directly
+to start training
+
+In the real world, labels are in the form of words, because words are human readable. We
+label our training data with words so that the mapping can be tracked. To convert word
+labels into numbers, we need to use a label encoder. Label encoding refers to the process of
+transforming the word labels into numerical form. This enables the algorithms to operate on
+our data.
