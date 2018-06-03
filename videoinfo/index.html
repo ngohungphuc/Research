@@ -11,9 +11,19 @@
     </form>
 
     <script>
+        const electron = require('electron');
+        const {
+            ipcRenderer
+        } = electron;
+
         document.querySelector('form').addEventListener('submit', (event) => {
             event.preventDefault();
-            const file = document.querySelector('input').files[0];
+            const {
+                path
+            } = document.querySelector('input').files[0];
+
+            //send data to electron
+            ipcRenderer.send('video:submit', path);
         });
     </script>
 </body>
