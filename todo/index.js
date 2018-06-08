@@ -19,6 +19,10 @@ const menuTemplate = [
                 label: 'New Todo'
             }, {
                 label: 'Quit',
+                //short key
+                accelerator: process.platform === 'darwin'
+                    ? 'Command+Q'
+                    : 'Ctrl+Q',
                 click() {
                     app.quit();
                 }
