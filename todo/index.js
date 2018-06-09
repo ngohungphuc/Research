@@ -13,7 +13,8 @@ app.on('ready', () => {
 });
 
 function createAddWindow() {
-    addWindow = new BrowserWindow({width: 300, height: 200, title: 'Add new Todo'})
+    addWindow = new BrowserWindow({width: 300, height: 200, title: 'Add new Todo'});
+    addWindow.loadURL(`file://${__dirname}/add.html`);
 }
 
 const menuTemplate = [
