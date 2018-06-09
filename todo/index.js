@@ -1,5 +1,10 @@
 const electron = require('electron');
-const {app, BrowserWindow, Menu} = electron;
+const {
+    app,
+    BrowserWindow,
+    Menu,
+    ipcMain
+} = electron;
 
 let mainWindow;
 let addWindow;
@@ -14,32 +19,35 @@ app.on('ready', () => {
 });
 
 function createAddWindow() {
-    addWindow = new BrowserWindow({width: 300, height: 200, title: 'Add new Todo'});
+    addWindow = new BrowserWindow({
+        width: 300,
+        height: 200,
+        title: 'Add new Todo'
+    });
     addWindow.loadURL(`file://${__dirname}/add.html`);
 }
 
-const menuTemplate = [
-    {
-        label: 'File',
-        submenu: [
-            {
-                label: 'New Todo',
-                click() {
-                    createAddWindow();
-                }
-            }, {
-                label: 'Quit',
-                //short key
-                accelerator: process.platform === 'darwin'
-                    ? 'Command+Q'
-                    : 'Ctrl+Q',
-                click() {
-                    app.quit();
-                }
-            }
-        ]
-    }
-];
+ipcMain.on('todo:add', (event, todo) => {
+    mainWindow.webContents.send('todo:add', todo);
+});
+
+const menuTemplate = [{
+    label: 'File',
+    submenu: [{
+        label: 'New Todo',
+        click() {
+            createAddWindow();
+        }
+    }, {
+        label: 'Quit',
+        //short key
+        accelerator: process.platform === 'darwin' ?
+            'Command+Q' : 'Ctrl+Q',
+        click() {
+            app.quit();
+        }
+    }]
+}];
 
 //for mac os
 if (process.platform === 'darwin') {
@@ -49,16 +57,13 @@ if (process.platform === 'darwin') {
 if (process.env.NODE_ENV !== 'production') {
     menuTemplate.push({
         label: 'View',
-        submenu: [
-            {
-                label: ' Toogle Developer Tools',
-                accelerator: process.platform === 'darwin'
-                    ? 'Command+Alt+I'
-                    : 'Ctrl+Shift+I',
-                click(item, focusedWindow) {
-                    focusedWindow.toggleDevTools();
-                }
+        submenu: [{
+            label: ' Toogle Developer Tools',
+            accelerator: process.platform === 'darwin' ?
+                'Command+Alt+I' : 'Ctrl+Shift+I',
+            click(item, focusedWindow) {
+                focusedWindow.toggleDevTools();
             }
-        ]
+        }]
     })
 }
