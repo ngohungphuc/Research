@@ -36,6 +36,13 @@ const menuTemplate = [
                     createAddWindow();
                 }
             }, {
+                label: 'Clear Todos',
+                click() {
+                    mainWindow
+                        .webContents
+                        .send('todo:clear');
+                }
+            }, {
                 label: 'Quit',
                 //short key
                 accelerator: process.platform === 'darwin'
