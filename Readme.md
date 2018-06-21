@@ -1,1 +1,1 @@
-![python](python-logo.gif)
+# Technology research
