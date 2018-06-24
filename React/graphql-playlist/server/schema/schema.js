@@ -11,17 +11,20 @@ const {
 var books = [{
         name: 'Name of the Wind',
         genre: 'Fantasy',
-        id: '1'
+        id: '1',
+        authorId: "1"
     },
     {
         name: 'The Final Empire',
         genre: 'Fantasy',
-        id: '2'
+        id: '2',
+        authorId: "2"
     },
     {
         name: 'The Long Earth',
         genre: 'Sci-Fi',
-        id: '3'
+        id: '3',
+        authorId: "3"
     },
 ];
 
@@ -53,6 +56,15 @@ const BookType = new GraphQLObjectType({
         },
         genre: {
             type: GraphQLString
+        },
+        author: {
+            type: AuthorType,
+            resolve(parent, args) {
+                //code to get data from db 
+                return _.find(authors, {
+                    id: parent.authorId
+                })
+            }
         }
     })
 })
