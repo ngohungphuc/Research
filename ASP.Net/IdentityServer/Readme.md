@@ -17,3 +17,15 @@ Install IS4 template
 > dotnet add package IdentityServer4.EntityFramework --version 2.1.1
 
 > dotnet add package IdentityServer4.AspNetIdentity --version 2.1.0
+
+> dotnet ef migrations add InitDB --context ApplicationDbContext -o Data/Migrations/AspNetIdentity/ApplicationDB
+
+> dotnet ef migrations add InitDB_Configuration --context ConfigurationDbContext -o Data/Migrations/IdentityServer/ConfigurationDB
+
+> dotnet ef migrations add InitDB_Persisted_Grant_migration --context PersistedGrantDbContext -o Data/Migrations/IdentityServer/PersistedGrantDB
+
+> dotnet ef database update --context ApplicationDbContext
+
+> dotnet ef database update --context ConfigurationDbContext
+
+> dotnet ef database update --context PersistedGrantDbContext

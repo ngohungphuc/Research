@@ -47,21 +47,14 @@ namespace Arch.IS4Host
                 iis.AutomaticAuthentication = false;
             });
 
-            var builder = services.AddIdentityServer(options =>
-            {
-                options.Events.RaiseErrorEvents = true;
-                options.Events.RaiseInformationEvents = true;
-                options.Events.RaiseFailureEvents = true;
-                options.Events.RaiseSuccessEvents = true;
-            })
-
+            var builder = services.AddIdentityServer()
             //use sql server for storing configuration data
             .AddConfigurationStore(configDB =>
             {
                 configDB.ConfigureDbContext = db => db.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
             })
             //use sql server for storing operational data
-            .AddConfigurationStore(operationalDB =>
+            .AddOperationalStore(operationalDB =>
             {
                 operationalDB.ConfigureDbContext = db => db.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
             })
