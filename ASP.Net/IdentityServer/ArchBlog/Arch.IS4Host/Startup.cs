@@ -4,6 +4,8 @@
 
 using Arch.IS4Host.Data;
 using Arch.IS4Host.Models;
+using IdentityServer4.EntityFramework.DbContexts;
+using IdentityServer4.EntityFramework.Mappers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -11,20 +13,21 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Linq;
 using System.Reflection;
 
 namespace Arch.IS4Host
 {
     public class Startup
     {
-        public IConfiguration Configuration { get; }
-        public IHostingEnvironment Environment { get; }
-
         public Startup(IConfiguration configuration, IHostingEnvironment environment)
         {
-            Configuration = configuration;
-            Environment = environment;
+            this.Configuration = configuration;
+            this.Environment = environment;
         }
+
+        public IConfiguration Configuration { get; }
+        public IHostingEnvironment Environment { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -83,6 +86,7 @@ namespace Arch.IS4Host
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
+                InitDb(app);
             }
             else
             {
@@ -92,6 +96,45 @@ namespace Arch.IS4Host
             app.UseStaticFiles();
             app.UseIdentityServer();
             app.UseMvcWithDefaultRoute();
+        }
+
+        public void InitDb(IApplicationBuilder app)
+        {
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var persistedGrantDbContext = serviceScope.ServiceProvider.GetRequiredService<PersistedGrantDbContext>();
+                persistedGrantDbContext.Database.Migrate();
+
+                var configDBContext = serviceScope.ServiceProvider.GetRequiredService<ConfigurationDbContext>();
+                configDBContext.Database.Migrate();
+
+                if (!configDBContext.Clients.Any())
+                {
+                    foreach (var client in Config.GetClients())
+                    {
+                        configDBContext.Clients.Add(client.ToEntity());
+                    }
+                    configDBContext.SaveChanges();
+                }
+
+                if (!configDBContext.IdentityResources.Any())
+                {
+                    foreach (var resource in Config.GetIdentityResources())
+                    {
+                        configDBContext.IdentityResources.Add(resource.ToEntity());
+                    }
+                    configDBContext.SaveChanges();
+                }
+
+                if (!configDBContext.ApiResources.Any())
+                {
+                    foreach (var api in Config.GetApis())
+                    {
+                        configDBContext.ApiResources.Add(api.ToEntity());
+                    }
+                    configDBContext.SaveChanges();
+                }
+            }
         }
     }
 }

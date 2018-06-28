@@ -38,3 +38,146 @@
 2018-06-28 15:45:58.396 +07:00 [DBG] Using Identity.External as default scheme for sign-out
 2018-06-28 15:45:58.397 +07:00 [DBG] Using Identity.Application as default scheme for challenge
 2018-06-28 15:45:58.397 +07:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-06-28 15:52:47.766 +07:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-06-28 15:52:47.798 +07:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-06-28 15:52:47.799 +07:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-06-28 15:52:47.799 +07:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-06-28 15:52:47.799 +07:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-06-28 15:52:48.009 +07:00 [WRN] Unable to bind to http://localhost:5000 on the IPv4 loopback interface: 'Error -4092 EACCES permission denied'.
+2018-06-28 15:52:48.013 +07:00 [WRN] Unable to bind to http://localhost:5000 on the IPv6 loopback interface: 'Error -4092 EACCES permission denied'.
+2018-06-28 15:52:48.027 +07:00 [FTL] Unable to start Kestrel.
+System.IO.IOException: Failed to bind to address http://localhost:5000. ---> System.AggregateException: One or more errors occurred. (Error -4092 EACCES permission denied) (Error -4092 EACCES permission denied) ---> Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.Networking.UvException: Error -4092 EACCES permission denied
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.Networking.LibuvFunctions.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.Networking.LibuvFunctions.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.Networking.UvTcpHandle.Bind(IPEndPoint endPoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.Listener.ListenTcp(Boolean useFileHandle)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.Listener.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.Listener.<>c.<StartAsync>b__8_0(Listener listener)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.LibuvThread.CallbackAdapter`1.<>c.<.cctor>b__3_1(Object callback, Object state)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.LibuvThread.DoPostWork()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.ListenerPrimary.<StartAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.LibuvTransport.<BindAsync>d__20.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.LibuvTransport.<BindAsync>d__20.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass23_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.<BindEndpointAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.<BindLocalhostAsync>d__6.MoveNext()
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.<BindLocalhostAsync>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.<BindAddressAsync>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.<BindAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.<BindAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<StartAsync>d__23`1.MoveNext()
+2018-06-28 15:53:07.728 +07:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-06-28 15:53:07.761 +07:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-06-28 15:53:07.762 +07:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-06-28 15:53:07.762 +07:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-06-28 15:53:07.762 +07:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-06-28 15:53:07.865 +07:00 [WRN] Unable to bind to http://localhost:5000 on the IPv4 loopback interface: 'Error -4092 EACCES permission denied'.
+2018-06-28 15:53:07.870 +07:00 [WRN] Unable to bind to http://localhost:5000 on the IPv6 loopback interface: 'Error -4092 EACCES permission denied'.
+2018-06-28 15:53:07.871 +07:00 [FTL] Unable to start Kestrel.
+System.IO.IOException: Failed to bind to address http://localhost:5000. ---> System.AggregateException: One or more errors occurred. (Error -4092 EACCES permission denied) (Error -4092 EACCES permission denied) ---> Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.Networking.UvException: Error -4092 EACCES permission denied
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.Networking.LibuvFunctions.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.Networking.LibuvFunctions.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.Networking.UvTcpHandle.Bind(IPEndPoint endPoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.Listener.ListenTcp(Boolean useFileHandle)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.Listener.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.Listener.<>c.<StartAsync>b__8_0(Listener listener)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.LibuvThread.CallbackAdapter`1.<>c.<.cctor>b__3_1(Object callback, Object state)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.LibuvThread.DoPostWork()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.ListenerPrimary.<StartAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.LibuvTransport.<BindAsync>d__20.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.LibuvTransport.<BindAsync>d__20.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass23_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.<BindEndpointAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.<BindLocalhostAsync>d__6.MoveNext()
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.<BindLocalhostAsync>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.<BindAddressAsync>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.<BindAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.<BindAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<StartAsync>d__23`1.MoveNext()
+2018-06-28 15:53:27.303 +07:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-06-28 15:53:27.337 +07:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-06-28 15:53:27.338 +07:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-06-28 15:53:27.338 +07:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-06-28 15:53:27.338 +07:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-06-28 15:55:20.498 +07:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-06-28 15:55:34.960 +07:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-06-28 15:55:36.791 +07:00 [DBG] Augmenting SignInContext
+2018-06-28 15:55:36.794 +07:00 [DBG] Adding idp claim with value: local
+2018-06-28 15:55:36.794 +07:00 [DBG] Adding amr claim with value: pwd
+2018-06-28 15:55:36.795 +07:00 [DBG] Adding auth_time claim with value: 1530176136
+2018-06-28 15:55:36.809 +07:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-06-28 15:55:36.854 +07:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-06-28 15:55:36.856 +07:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-06-28 15:55:36.934 +07:00 [DBG] 0 persisted grants found for e69efdd5-5b51-40a0-bb7a-d741a448c7c9
+2018-06-28 15:55:44.045 +07:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-06-28 15:55:44.046 +07:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-06-28 15:55:46.911 +07:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-06-28 15:55:46.914 +07:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-06-28 15:55:48.580 +07:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-06-28 15:55:48.584 +07:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-06-28 15:55:48.587 +07:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-06-28 15:55:48.608 +07:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-06-28 15:55:48.612 +07:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-06-28 15:55:48.612 +07:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
