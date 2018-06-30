@@ -1,15 +1,6 @@
 import React, {Component} from 'react';
-import {gql} from 'apollo-boost';
+import {getAuthorsQuery} from '../queries/queries';
 import {graphql} from 'react-apollo';
-
-const getAuthorQuery = gql `
-    {
-        authors {
-            name
-            id
-        }
-    }
-`;
 
 class AddBook extends Component {
     displayAuthors() {
@@ -28,7 +19,7 @@ class AddBook extends Component {
                 });
         }
     }
-    
+
     render() {
         return (
             <form id="add-book">
@@ -54,4 +45,4 @@ class AddBook extends Component {
     }
 }
 
-export default graphql(getAuthorQuery)(AddBook);
+export default graphql(getAuthorsQuery)(AddBook);
