@@ -3,6 +3,8 @@ const grapqlHTTP = require('express-graphql');
 const schema = require('./schema/schema');
 const mongoose = require('mongoose');
 const app = express();
+const cors = require('cors');
+app.use(cors());
 
 mongoose.connect("mongodb://phucngo:phucngo95@ds121311.mlab.com:21311/gpl");
 mongoose.connection.once('open', () => {
