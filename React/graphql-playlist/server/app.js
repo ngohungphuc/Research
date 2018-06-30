@@ -1,17 +1,23 @@
-const express = require("express");
-const grapqlHTTP = require('express-graphql');
+const express = require('express');
+const graphqlHTTP = require('express-graphql');
 const schema = require('./schema/schema');
 const mongoose = require('mongoose');
-const app = express();
 const cors = require('cors');
+
+const app = express();
+
+// allow cross-origin requests
 app.use(cors());
 
-mongoose.connect("mongodb://phucngo:phucngo95@ds121311.mlab.com:21311/gpl");
+// connect to mlab database
+// make sure to replace my db string & creds with your own
+mongoose.connect('mongodb://ninja:test@ds161148.mlab.com:61148/graphql-ninja')
 mongoose.connection.once('open', () => {
-    console.log('connection has been made');
+    console.log('conneted to database');
 });
 
-app.use('/graphql', grapqlHTTP({
+// bind express with graphql
+app.use('/graphql', graphqlHTTP({
     schema,
     graphiql: true
 }));

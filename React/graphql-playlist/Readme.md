@@ -1,15 +1,4 @@
-```js
-mutation {
-  addAuthor(name: "Tony", age: 23) {
-    name
-    age
-  }
-}
+# graphql-playlist
+All course files for the GraphQL tutorial playlist on The Net Ninja YouTube channel.
 
-mutation {
-  addBook(name: "Long Earth", genre:"Sci-Fi", authorId:"5b35d40711fdaa1a44aa74eb") {
-    name
-    genre
-  }
-}
-```
+Node modules are not included in the course files. After download, run npm install to install the modules (client and server folders)
