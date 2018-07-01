@@ -1,0 +1,100 @@
+body, html {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.animate-in {
+  animation: fade-slide 1.5s forwards;
+}
+
+.title {
+  width: 100%;
+  background-color: #ccc;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.title h1 {
+  margin: 0;
+  color: white;
+  font-size: 1.8em;
+}
+
+.title, .course-feature {
+  opacity: 0;
+}
+
+.content, .start-over {
+  margin: 5px auto;
+  text-align: center;
+  width: 80%;
+  max-width: 500px;
+}
+
+.course-feature {
+  padding: 2px;
+  -webkit-box-shadow: 2px 2px 1px #ccc;
+  -moz-box-shadow: 2px 2px 1px #ccc;
+  box-shadow: 2px 2px 1px #ccc;
+}
+
+.course-feature {
+  margin: 10px auto;
+}
+
+#installable {
+  background-color: #d3ff7b;
+}
+
+#offline {
+  background-color: #9ce9ff;
+}
+
+#responsive {
+  background-color: #ffaf8a;
+}
+
+#push {
+  background-color: #fff395;
+}
+
+#notifications {
+  background-color: #ffcedf;
+}
+
+#native-features {
+  background-color: #ddb5ff;
+}
+
+#more {
+  background-color: #afffc3;
+}
+
+.start-over button {
+  background-color: #fa923f;
+  border: 1px solid #fa923f;
+  -webkit-box-shadow: 2px 2px 2px #ccc;
+  -moz-box-shadow: 2px 2px 2px #ccc;
+  box-shadow: 2px 2px 2px #ccc;
+  padding: 5px;
+  color: white;
+  opacity: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.start-over button:hover {
+  background-color: #ff7f16;
+}
+
+@keyframes fade-slide {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
