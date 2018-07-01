@@ -640,3 +640,7 @@ __pycache__/
 *.xsd.cs
 
 *.db
+.vscode/
+package-lock.json
+node_modules/
+yarn.lock
