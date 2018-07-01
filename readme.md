@@ -1,3 +1,2 @@
-# Technology research
-
-Repo contain all of my technology research
+# Technology Research
+Repo contain all of my Technology Research in .Net, React, Electron, Python....
