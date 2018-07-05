@@ -21,14 +21,14 @@
   },
   "homepage": "https://github.com/hoangphucvu/Grunt-Gulp#readme",
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-aws": "^0.6.2",
-    "grunt-contrib-coffee": "^1.0.0",
-    "grunt-contrib-cssmin": "^1.0.2",
-    "grunt-contrib-htmlmin": "^2.0.0",
-    "grunt-contrib-jade": "^1.0.0",
-    "grunt-contrib-stylus": "^1.2.0",
-    "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "^1.0.0"
+    "grunt": "1.0.3",
+    "grunt-aws": "0.6.2",
+    "grunt-contrib-coffee": "1.0.0",
+    "grunt-contrib-cssmin": "1.0.2",
+    "grunt-contrib-htmlmin": "2.4.0",
+    "grunt-contrib-jade": "1.0.0",
+    "grunt-contrib-stylus": "1.2.0",
+    "grunt-contrib-uglify": "2.3.0",
+    "grunt-contrib-watch": "1.1.0"
   }
 }
