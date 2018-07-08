@@ -42,7 +42,7 @@ app.on('ready', () => {
             const yPosition = process.platform === 'darwin' ? y : y - height;
             mainWindow.setBounds({
                 x: x - width / 2,
-                yPosition,
+                y: yPosition,
                 height,
                 width
             })
