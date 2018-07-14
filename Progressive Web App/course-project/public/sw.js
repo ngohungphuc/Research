@@ -64,6 +64,13 @@ self.addEventListener('activate', function (event) {
   }));
 }); */
 
-self.addEventListener("fetch", function (event) {
+//caches only
+/* self.addEventListener("fetch", function (event) {
   event.respondWith(caches.match(event.request));
 });
+ */
+
+ //network only
+/* self.addEventListener("fetch", function (event) {
+  event.respondWith(fetch(event.request));
+}); */
