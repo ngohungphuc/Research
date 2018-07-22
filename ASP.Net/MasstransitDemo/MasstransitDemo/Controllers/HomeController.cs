@@ -16,8 +16,7 @@ namespace MasstransitDemo.Controllers
         {
             _bus = bus;
         }
-
-
+        
         public async Task<IActionResult> Index()
         {
             await _bus.Publish<Message>(

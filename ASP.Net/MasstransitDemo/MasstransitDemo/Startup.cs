@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Autofac;
-using Autofac.Extensions.DependencyInjection;
 using GreenPipes;
 using MasstransitDemo.Services;
 using MassTransit;
@@ -92,8 +87,7 @@ namespace MasstransitDemo
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
-
+            
             //var bus = Register();
             //start / stop the bus with the web application
             //applicationLifetime.ApplicationStarted.Register(bus.Start);
