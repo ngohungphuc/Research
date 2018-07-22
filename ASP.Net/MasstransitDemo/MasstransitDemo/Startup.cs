@@ -59,14 +59,12 @@ namespace MasstransitDemo
                 });
             }));
 
-            services.AddSingleton<IPublishEndpoint>(provider => provider.GetRequiredService<IBusControl>());
-            services.AddSingleton<ISendEndpointProvider>(provider => provider.GetRequiredService<IBusControl>());
+            //services.AddSingleton<IPublishEndpoint>(provider => provider.GetRequiredService<IBusControl>());
+            //services.AddSingleton<ISendEndpointProvider>(provider => provider.GetRequiredService<IBusControl>());
             services.AddSingleton<IBus>(provider => provider.GetRequiredService<IBusControl>());
-
-            services.AddScoped(provider => provider.GetRequiredService<IBus>().CreateRequestClient<SendMessageConsumer>());
-
-            services.AddSingleton<IHostedService, BusService>();
-            
+            //if do this we can use IRequestClient in controller at this time being I only use IBus
+            //services.AddScoped(provider => provider.GetRequiredService<IBus>().CreateRequestClient<SendMessageConsumer>());
+            services.AddSingleton<IHostedService, BusService>();   
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
