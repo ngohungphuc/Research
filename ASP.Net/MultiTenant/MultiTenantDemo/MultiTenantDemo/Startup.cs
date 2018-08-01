@@ -57,7 +57,7 @@ namespace MultiTenantDemo
             {
                 routes.MapRoute(
                     name: "tenantRoute",
-                    template: "{tenant}/{controller=Home}/{action=Index}/{id?}");
+                    template: "{tenant=tenant1}/{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

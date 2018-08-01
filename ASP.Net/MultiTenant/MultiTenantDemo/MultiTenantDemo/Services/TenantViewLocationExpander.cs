@@ -24,7 +24,7 @@ namespace MultiTenantDemo.Services
                 string tenantArea = RazorViewEngine.GetNormalizedRouteValue(context.ActionContext, _tenant);
                 IEnumerable<string> tenantViewLocation = new string[]
                 {
-                    $"/Views/Tenants/{tenantArea}/Views/{{1}}/{{0}}.cshtml",
+                //    $"/Views/Tenants/{tenantArea}/Views/{{1}}/{{0}}.cshtml",
                     $"/Views/Tenants/{tenantArea}/Views/Shared/{{0}}.cshtml",
                 };
 

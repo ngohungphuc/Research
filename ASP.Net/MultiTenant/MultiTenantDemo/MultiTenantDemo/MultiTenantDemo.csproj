@@ -9,16 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Views\Tenants\Tenant1\Views\Home\Index.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
     <Content Update="Views\Tenants\Tenant1\Views\Shared\_Layout.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\Tenants\Tenant2\Views\Home\About.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\Tenants\Tenant2\Views\Home\Index.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Views\Tenants\Tenant2\Views\Shared\_Layout.cshtml">
