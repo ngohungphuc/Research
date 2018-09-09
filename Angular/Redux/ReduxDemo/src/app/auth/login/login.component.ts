@@ -53,6 +53,7 @@ export class LoginComponent implements OnInit {
       .store
       .dispatch(new AuthActions.Login(authData));
 
+    // fake interact with api
     setTimeout(() => {
       this
         .store
