@@ -25,9 +25,9 @@
                     is required</label>
                 </div>
                 <div class="form-group text-center">
-                  <button type="submit" class="btn btn-primary btn-block" *ngIf="!isLogging" [disabled]="loginForm.invalid">Login</button>
-                  <img src="/assets/img/loader.svg" class="loading-img" *ngIf="isLogging">
-                  <p *ngIf="error$">{{error$}}</p>
+                  <button type="submit" class="btn btn-primary btn-block" *ngIf="!isLogging$" [disabled]="loginForm.invalid">Login</button>
+                  <img src="/assets/img/loader.svg" class="loading-img" *ngIf="isLogging$">
+                  <p *ngIf="error$ && !isLogging$">{{error$}}</p>
                 </div>
               </form>
             </div>

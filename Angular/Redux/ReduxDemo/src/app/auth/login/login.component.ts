@@ -12,7 +12,7 @@ import {delayWhen} from 'rxjs/operators';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   error$ = null;
-  isLogging = false;
+  isLogging$ = false;
   constructor(private fb: FormBuilder, private store: Store < AuthState >) {}
 
   ngOnInit() {
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
       .store
       .select(selectIsLoginState)
       .subscribe(res => {
-        this.isLogging = res;
+        this.isLogging$ = res;
       });
     this.loginForm = this
       .fb
@@ -53,6 +53,18 @@ export class LoginComponent implements OnInit {
       .store
       .dispatch(new AuthActions.Login(authData));
 
+    const message = interval(1000);
+    const delayForFiveSeconds = () => timer(5000);
+    const delayWhenExample = message.pipe(delayWhen(delayForFiveSeconds));
+    const subscribe = delayWhenExample.subscribe(val => this.store.dispatch(new AuthActions.LoginDone));
+
+    this
+      .store
+      .select(selectIsLoginState)
+      .subscribe(res => {
+        this.isLogging$ = res;
+      });
+
     this
       .store
       .select(selectLoginState)
@@ -61,17 +73,5 @@ export class LoginComponent implements OnInit {
           this.error$ = res;
         }
       });
-
-    this
-      .store
-      .select(selectIsLoginState)
-      .subscribe(res => {
-        this.isLogging = res;
-      });
-
-    const message = interval(1000);
-    const delayForFiveSeconds = () => timer(5000);
-    const delayWhenExample = message.pipe(delayWhen(delayForFiveSeconds));
-    const subscribe = delayWhenExample.subscribe(val => this.store.dispatch(new AuthActions.LoginDone));
   }
 }
