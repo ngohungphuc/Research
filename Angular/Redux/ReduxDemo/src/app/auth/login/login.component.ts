@@ -53,10 +53,11 @@ export class LoginComponent implements OnInit {
       .store
       .dispatch(new AuthActions.Login(authData));
 
-    const message = interval(1000);
-    const delayForFiveSeconds = () => timer(5000);
-    const delayWhenExample = message.pipe(delayWhen(delayForFiveSeconds));
-    const subscribe = delayWhenExample.subscribe(val => this.store.dispatch(new AuthActions.LoginDone));
+    setTimeout(() => {
+      this
+        .store
+        .dispatch(new AuthActions.LoginDone);
+    }, 5000);
 
     this
       .store
