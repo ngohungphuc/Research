@@ -10,7 +10,6 @@ import { metaReducers, reducers } from '@app/core/store/reducers';
 import { NgModule } from '@angular/core';
 import { NotfoundComponent } from '@shared/notfound/notfound.component';
 import { PortalModule } from './portal/portal.module';
-import { RouterModule } from '@angular/router';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
@@ -20,12 +19,11 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
   ],
   imports: [
     BrowserModule,
-    AuthModule,
     AppRoutingModule,
+    AuthModule,
     HttpModule,
     HttpClientModule,
     PortalModule,
-    RouterModule,
     /**
      * StoreModule.forRoot is imported once in the root module, accepting a reducer
      * function or object map of reducer functions. If passed an object of

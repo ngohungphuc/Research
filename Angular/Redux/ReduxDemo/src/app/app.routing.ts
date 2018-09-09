@@ -1,9 +1,7 @@
 import {NgModule} from '@angular/core';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {NotfoundComponent} from '@shared/notfound/notfound.component';
-import {AccountComponent} from './auth/account.component';
 import {LoginComponent} from '@app/auth';
-import {PortalComponent} from './portal/portal.component';
 import {PortalModule} from './portal/portal.module';
 
 export const appRoutes: Routes = [
@@ -29,7 +27,7 @@ export const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules})],
+  imports: [RouterModule.forRoot(appRoutes, {enableTracing: true})],
   exports: [RouterModule]
 })
 

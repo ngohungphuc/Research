@@ -35,6 +35,12 @@ export class AuthEffects {
     tap(() => this.router.navigate(['/portal']))
   );
 
+  @Effect({ dispatch: false })
+  loginDone$ = this.actions$.pipe(
+    ofType<authAction.LoginDone>(authAction.LoginActionTypes.LOGIN_DONE),
+    tap(action => console.log(action))
+  );
+
   constructor(
     private http: HttpClient,
     private actions$: Actions,

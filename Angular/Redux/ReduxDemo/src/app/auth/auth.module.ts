@@ -7,14 +7,12 @@ import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { reducer } from './store/reducers/auth.reducer';
-import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     AccountRouting,
-    RouterModule,
     StoreModule.forFeature('authModule', reducer),
     EffectsModule.forFeature([AuthEffects]),
   ],
