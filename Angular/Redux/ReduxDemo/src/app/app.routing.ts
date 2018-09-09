@@ -14,7 +14,7 @@ export const appRoutes: Routes = [
     component: LoginComponent
   }, {
     path: 'portal',
-    loadChildren: () => PortalModule
+    loadChildren: () => PortalModule // lazy load module
   }, {
     path: '**',
     redirectTo: '/notfound',
