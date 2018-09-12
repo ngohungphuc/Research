@@ -1,3 +1,4 @@
+import { PortalComponent } from './portal/portal.component';
 import {NgModule} from '@angular/core';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {NotfoundComponent} from '@shared/notfound/notfound.component';
@@ -14,7 +15,7 @@ export const appRoutes: Routes = [
     component: LoginComponent
   }, {
     path: 'portal',
-    loadChildren: () => PortalModule // lazy load module
+    component: PortalComponent
   }, {
     path: '**',
     redirectTo: '/notfound',
