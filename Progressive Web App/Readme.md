@@ -7,5 +7,11 @@ https://codelabs.developers.google.com/codelabs/your-first-pwapp/#1
 https://developers.google.com/web/fundamentals/primers/service-workers/
 https://codelabs.developers.google.com/codelabs/debugging-service-workers/#0
 
-### Current 
-https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/#use_service_workers_to_pre-cache_the_app_shell
+
+### Note
+The criteria that need to be met before the Add to Home Screen prompt will be shown:
+- You need a manifest.json file.
+- Your manifest file needs a start URL.
+- You need a 144 x 144 PNG icon.
+- Your site must be using a Service Worker running over HTTPS.
+- The user must have visited your site at least twice, with at least five minutes between visits.
