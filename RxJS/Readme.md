@@ -42,5 +42,29 @@ a separation of concerns6 between the two entities, and it’s a big win for the
 of your code.
 
 ### TIME
+
 The implicit factor behind all of this is time. For everything RxJS there’s always an
 underlying concept of time, which you can use to manipulate streams.
+
+## Functional programs have the following characteristics
+
+### Declarative
+
+Functional code has a peculiar style, which takes advantage of
+JavaScript’s higher-order functions to apply specialized business logic.
+
+### Immutable
+
+An immutable program (and by this we mean any immutable function,
+module, or whole program) is one that never changes or modifies data
+after it’s been created or after its variables have been declared. This can be a radical
+concept to grasp, especially when you’re coming from an OO background.
+Functional programs treat data as immutable, constant values.
+
+### Side effect–free
+
+Functions with side effects depend on data residing outside its
+own local scope. A function’s scope is made up of its arguments and any local
+variables declared within. Interacting with anything outside this (like reading a
+file, writing to the console, rendering elements on an HTML page, and more) is
+considered a side effect and should be avoided or, at the very least, isolated
