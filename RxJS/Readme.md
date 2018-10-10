@@ -68,3 +68,9 @@ own local scope. A function’s scope is made up of its arguments and any local
 variables declared within. Interacting with anything outside this (like reading a
 file, writing to the console, rendering elements on an HTML page, and more) is
 considered a side effect and should be avoided or, at the very least, isolated
+
+## The iterator pattern
+
+A key design principle behind RxJS streams is to give you a familiar traversal mechanism, just as you have with arrays. Iterators are used to traverse containers of data in a structure-agnostic way or independent of the underlying data structure used to harness these elements, whether it’s an array, a tree, a map, or even a stream. In addition, this pattern is effective at decoupling the business logic applied at each element from the iteration itself.
+
+<img src="./img/AcroRd32_2018-10-10_16-20-31.png">
