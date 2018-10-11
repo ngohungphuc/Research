@@ -74,3 +74,7 @@ considered a side effect and should be avoided or, at the very least, isolated
 A key design principle behind RxJS streams is to give you a familiar traversal mechanism, just as you have with arrays. Iterators are used to traverse containers of data in a structure-agnostic way or independent of the underlying data structure used to harness these elements, whether it’s an array, a tree, a map, or even a stream. In addition, this pattern is effective at decoupling the business logic applied at each element from the iteration itself.
 
 <img src="./img/AcroRd32_2018-10-10_16-20-31.png">
+
+## When and where to use RxJS
+
+<img src="./img/AcroRd32_2018-10-11_11-37-50.png">
