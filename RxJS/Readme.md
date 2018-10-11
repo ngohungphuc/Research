@@ -78,3 +78,30 @@ A key design principle behind RxJS streams is to give you a familiar traversal m
 ## When and where to use RxJS
 
 <img src="./img/AcroRd32_2018-10-11_11-37-50.png">
+
+### SINGLE-VALUE, SYNCHRONOUS
+
+The simplest case is that you have only a single piece of data. In programming, you know there are operations that return a single value for each invocation. This is the category of any function that returns a single object. You can use the Rx.Observable.of() function to wrap a single, synchronous value. As soon as the subscriber is attached, the value is emitted.
+
+```
+Rx.Observable.of(42).subscribe(console.log); //-> 42
+```
+
+Although there are cases where you’ll need to wrap single values, in most cases, if your goal is just to perform simple operations on them (concatenating another string, adding another number, and others), an observable wrapper may be overkill. The only time you’ll wrap simple values with observables is when they combine with other streams.
+
+### MULTI-VALUE, SYNCHRONOUS
+
+You can also group single items together to form collections of data, mainly for arrays. In order to apply the same operation that you used on the single item on all of the items, you would traditionally iterate over the collection and repeatedly apply the same operation to each item in the collection. With RxJS, it works in exactly the same way:
+
+```
+Rx.Observable.from([1, 2, 3]).subscribe(console.log);
+// -> 1
+2
+3
+
+Rx.Observable.from('RxJS').subscribe(console.log);
+// -> "R"
+"X"
+"J"
+"S"
+```
