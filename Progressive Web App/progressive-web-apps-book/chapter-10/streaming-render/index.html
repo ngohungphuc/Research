@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Progressive Times - Online News</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Merriweather" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./css/site.css">
+  <!-- Adress bar styling -->
+  <meta name="theme-color" content="#FFD700">
+  <meta name="msapplication-navbutton-color" content="#FFD700">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="./manifest.json">
+</head>
+<body>
+    <div id="offline"></div>
+  <!-- header -->
+  <div id="header">
+    <img id="logo" src="./images/newspaper.svg" />
+    <h1>Progressive Times</h1>
+    <h6>Latest News</h6>
+  </div>
+  <!-- latest news -->
+  <div id="latest"><h2><a href="./article.html?id=1">Nose picking ban for Manila police</a></h2><p>A new directive tells police in Manila not to pick their noses whilst on duty</p><h2><a href="./article.html?id=2">Australian police find gun in biker's bottom</a></h2><p>Police in Australia find a loaded hangun wedged in the behind of a gang linked motorcyclist</p><h2><a href="./article.html?id=3">Town's giant dog dropping goes missing</a></h2><p>Local police on the trail of a missing inflatable dog mess</p><h2><a href="./article.html?id=4">Austrian man wins right to be called Zebra</a></h2><p>An Austrian man has won a court case enabling him to change his family name back to 'Zebra'</p></div>
+  <hr>
+  <!-- javaScript -->
+  <script async src="./js/main.js"></script>
+  <script>
+  // Register the service worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').then(function(registration) {
+      // Registration was successful
+    });
+  }
+  </script>
+</body>
+</html>

@@ -105,3 +105,5 @@ Rx.Observable.from('RxJS').subscribe(console.log);
 "J"
 "S"
 ```
+
+### Identifying different sources of data

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Progressive Times - Contact Us</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Merriweather" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./css/site.css">
+  <!-- Adress bar styling -->
+  <meta name="theme-color" content="#FFD700">
+  <meta name="msapplication-navbutton-color" content="#FFD700">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="./manifest.json">
+</head>
+<body>
+  <div id="offline"></div>
+  <div id="message"></div>
+  <!-- header -->
+  <div id="header">
+    <img id="logo" src="./images/newspaper.svg" />
+    <h1>Progressive Times</h1>
+    <br>
+    <h6>Please send us any questions you may have!</h6>
+  </div>
+  <div id="container">
+    <!-- contact form -->
+    <div class="contact-form">
+      <input type="text" id="name" name="name" placeholder="Your Name">
+      <br>
+      <input type="email" id="email" name="email" placeholder="Email Address" required>
+      <br>
+      <input type="text" id="subject" name="subject" placeholder="Subject">
+      <br>
+      <input type="text" id="message" name="message" placeholder="Your Message">
+      <br>
+      <button id="submit">Send</button>
+    </div>
+  </div>
+  <script src="/js/idb-keyval.js" ></script>
+  <script src="/js/contact.js" ></script>
+  <script>
+  // Register the service worker
+  if ('serviceWorker' in navigator && 'SyncManager' in window) {
+    navigator.serviceWorker.register('./sw.js')
+    .then(registration => navigator.serviceWorker.ready)
+    .then(registration => {
+      document.getElementById('submit').addEventListener('click', () => {
+        registration.sync.register('contact-email').then(() => {            // The sync for the contact-email
+            queueMessage();                                                 // Queue the body of the message
+            displayMessageNotification('Message queued');
+        });
+      });
+    });
+  } else {
+    document.getElementById('submit').addEventListener('click', () => {
+          sendMessage()     // Else fallback and send the actual message
+          .then(displayMessageNotification('Message sent'))
+          .catch(err => { displayMessageNotification('Message failed') });
+    });
+  }
+  </script>
+</body>
+</html>
