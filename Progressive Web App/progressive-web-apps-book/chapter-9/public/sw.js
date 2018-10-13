@@ -94,7 +94,9 @@ self.addEventListener('fetch', function(event) {
   });
 
 // The sync event for the contact form
+//This event will only fire when the browser believes that the user has connectivity.
 self.addEventListener('sync', function (event) {
+  //Check the tag of the current sync to ensure that you fire the correct code.
   if (event.tag === 'contact-email') {
     event.waitUntil(
       idbKeyval.get('sendMessage').then(value =>

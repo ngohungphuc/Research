@@ -46,6 +46,7 @@
     .then(registration => navigator.serviceWorker.ready)
     .then(registration => {
       document.getElementById('submit').addEventListener('click', () => {
+        // name the sync event contact-email
         registration.sync.register('contact-email').then(() => {            // The sync for the contact-email
             queueMessage();                                                 // Queue the body of the message
             displayMessageNotification('Message queued');
