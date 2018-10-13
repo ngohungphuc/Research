@@ -99,6 +99,7 @@ self.addEventListener('sync', function (event) {
   //Check the tag of the current sync to ensure that you fire the correct code.
   if (event.tag === 'contact-email') {
     event.waitUntil(
+      //get the lastest value user type to submit to server again
       idbKeyval.get('sendMessage').then(value =>
         fetch('/sendMessage/', {
           method: 'POST',
