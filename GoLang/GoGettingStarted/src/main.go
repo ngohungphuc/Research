@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	planCapacitites := []float64{30, 30, 30, 60, 60, 100}
+	plantCapacitites := []float64{30, 30, 30, 60, 60, 100}
 
 	activePlants := []int{0, 1}
 
@@ -22,20 +22,27 @@ func main() {
 
 	switch option {
 	case "1":
-		for idx, cap := range planCapacitites {
-			fmt.Printf("Plant %d capacity: %.0f\n", idx, cap)
-		}
-
+		generatePlantCapacityReport(plantCapacitites...)
 	case "2":
-		capacity := 0.
-		for _, plantId := range activePlants {
-			capacity += planCapacitites[plantId]
-		}
-		fmt.Printf("%-20s%.0f\n", "Capacity", capacity)
-		fmt.Printf("%-20s%.0f\n", "Load", gridLoad)
-		fmt.Printf("%-20s%.1f%%\n", "Util", gridLoad/capacity*100)
+		generatePowerGridReport(activePlants, plantCapacitites, gridLoad)
 
 	default:
 		fmt.Println("Unknow command")
 	}
+}
+
+func generatePlantCapacityReport(plantCapacitites ...float64) {
+	for idx, cap := range plantCapacitites {
+		fmt.Printf("Plant %d capacity: %.0f\n", idx, cap)
+	}
+}
+
+func generatePowerGridReport(activePlants []int, plantCapacitites []float64, gridLoad float64) {
+	capacity := 0.
+	for _, plantId := range activePlants {
+		capacity += plantCapacitites[plantId]
+	}
+	fmt.Printf("%-20s%.0f\n", "Capacity", capacity)
+	fmt.Printf("%-20s%.0f\n", "Load", gridLoad)
+	fmt.Printf("%-20s%.1f%%\n", "Util", gridLoad/capacity*100)
 }
