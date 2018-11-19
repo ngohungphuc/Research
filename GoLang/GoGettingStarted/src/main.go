@@ -1,10 +1,22 @@
 package main
 
 import (
+	"strings"
 	"fmt"
+	"errors"
 )
 
 func main() {
+	plnats := []PowerPlant {
+		PowerPlant{hydro, 300, active},
+		PowerPlant{wind, 30, active},
+		PowerPlant{wind, 25, inactive},
+		PowerPlant{wind, 35, active},
+		PowerPlant{solar, 45, unavailable},
+		PowerPlant{solar, 40, inactive},
+	}
+
+	grid := PowerGrid{300, plants}
 	plantCapacitites := []float64{30, 30, 30, 60, 60, 100}
 
 	activePlants := []int{0, 1}
@@ -45,4 +57,43 @@ func generatePowerGridReport(activePlants []int, plantCapacitites []float64, gri
 	fmt.Printf("%-20s%.0f\n", "Capacity", capacity)
 	fmt.Printf("%-20s%.0f\n", "Load", gridLoad)
 	fmt.Printf("%-20s%.1f%%\n", "Util", gridLoad/capacity*100)
+}
+
+type PlantType string
+
+const (
+	hydro PlantType = "Hydro"
+	wind  PlantType = "Wind"
+	solar PlantType = "Solar"
+)
+
+type PlantStatus string
+
+const (
+	active      PlantStatus = "Active"
+	inactive    PlantStatus = "InActive"
+	unavailable PlantStatus = "Unavailable"
+)
+
+type PowerPlant struct {
+	plantType PlantType
+	capacity  float64
+	status    PlantStatus
+}
+
+type PowerGrid struct {
+	load   float64
+	plants []PowerPlant
+}
+
+func (pg *PowerGrid) generatePlantReport() {
+	for idx, p := range pg.plants {
+		label := fmt.Sprintf("%s%d", "Plant #", idx)
+		fmt.Println(label)
+		fmt.Println(strings.Repeat("-"), len(label)))
+		fmt.Printf("%-20s%.1f%%\n", "Type", p.plantType)
+		fmt.Printf("%-20s%.0f\n", "Capacity", p.capacity)
+		fmt.Printf("%-20s%s\n", "Status", p.status)
+		fmt.Println("")
+	}
 }
