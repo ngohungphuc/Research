@@ -17,11 +17,6 @@ func main() {
 	}
 
 	grid := PowerGrid{300, plants}
-	plantCapacitites := []float64{30, 30, 30, 60, 60, 100}
-
-	activePlants := []int{0, 1}
-
-	gridLoad := 75.
 
 	fmt.Println("1) Generate Power Plan Report")
 	fmt.Println("2) Generate Power Grid Report")
