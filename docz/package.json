@@ -1,0 +1,15 @@
+{
+  "name": "docz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docz:dev": "docz dev",
+    "docz:build": "docz build"
+  },
+  "devDependencies": {
+    "docz": "^0.12.14"
+  },
+  "author": "",
+  "license": "ISC"
+}
