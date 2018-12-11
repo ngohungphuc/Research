@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer4-NetCore2.2", "IdentityServer4-NetCore2.2\IdentityServer4-NetCore2.2.csproj", "{4717D37D-BD7A-413F-82B5-A4EE6043DD97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4717D37D-BD7A-413F-82B5-A4EE6043DD97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4717D37D-BD7A-413F-82B5-A4EE6043DD97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4717D37D-BD7A-413F-82B5-A4EE6043DD97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4717D37D-BD7A-413F-82B5-A4EE6043DD97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B9A2A6A-9335-4080-B51D-A8EAE72F03D5}
+	EndGlobalSection
+EndGlobal
