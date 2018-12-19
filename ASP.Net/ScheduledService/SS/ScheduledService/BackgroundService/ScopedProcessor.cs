@@ -16,6 +16,12 @@ namespace ScheduledService.BackgroundService
             _serviceScopeFactory = serviceScopeFactory;
         }
 
+        /// <summary>
+        /// To use scoped services within an IHostedService, create a scope. 
+        /// No scope is created for a hosted service by default.
+        /// override logic of abstract class HostedService
+        /// </summary>
+        /// <returns></returns>
         protected override async Task ProcessBackgroundTask()
         {
             using (var scope = _serviceScopeFactory.CreateScope())
