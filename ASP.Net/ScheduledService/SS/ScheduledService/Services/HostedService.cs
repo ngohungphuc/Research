@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Hosting;
 
 namespace ScheduledService.Services
 {
@@ -45,6 +46,16 @@ namespace ScheduledService.Services
 
         // Derived classes should override this and execute a long running method until 
         // cancellation is requested
-        protected abstract Task ExecuteAsync(CancellationToken cancellationToken);
+        protected virtual async Task ExecuteAsync(CancellationToken stoppingToken)
+        {
+            do
+            {
+                await ProcessBackgroundTask();
+
+                await Task.Delay(5000, stoppingToken);
+            } while (!stoppingToken.IsCancellationRequested);
+        }
+
+        protected abstract Task ProcessBackgroundTask();
     }
 }
