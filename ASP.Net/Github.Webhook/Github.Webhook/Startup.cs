@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Github.Webhook.Hubs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +28,9 @@ namespace Github.Webhook
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddGitHubWebHooks();
+
+            services.AddSignalR();
+            services.AddScoped<IGithubHookService, GithubHookService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,7 +45,19 @@ namespace Github.Webhook
                 app.UseHsts();
             }
 
-            app.UseMvc();
+            app.UseStaticFiles();
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<GithubSignalRHub>("/githook");
+            });
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }
