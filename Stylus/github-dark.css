@@ -8929,3 +8929,7 @@ body.blog .highlight .il {
 .gh-header-shadow.box-shadow {
     background-color: #1E1E1E !important;
 }
+
+.user-status-message-wrapper.f6.lh-condensed.ws-normal.pt-3 {
+    color: #afafaf !important;
+}
