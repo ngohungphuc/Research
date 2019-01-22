@@ -59,6 +59,7 @@
             "nl": {
               "aot": true,
               "outputPath": "dist/web-translation-nl/",
+              "baseHref": "/nl/",
               "i18nFile": "src/locale/messages.nl.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "nl",
