@@ -61,7 +61,8 @@
               "outputPath": "dist/web-translation-nl/",
               "i18nFile": "src/locale/messages.nl.xlf",
               "i18nFormat": "xlf",
-              "i18nLocale": "nl"
+              "i18nLocale": "nl",
+              "i18nMissingTranslation": "error"
             }
           }
         },
