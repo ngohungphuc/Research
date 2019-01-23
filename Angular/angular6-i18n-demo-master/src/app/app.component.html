@@ -1,0 +1,27 @@
+<mat-drawer-container autosize>
+
+  <!-- top bar -->
+  <mat-toolbar class="toolbar">
+    <i (click)="drawer.toggle()" class="icon ion-md-menu menu-icon"></i>
+    <span i18n="@@toolbar-title" class="title">My Application</span>
+    <span class="spacer"></span>
+
+    <mat-list-item *ngFor="let locale of locales">
+      <a class="lang-option" [href]="'/' + locale.code + currentUrl">{{ locale.text }}</a>
+    </mat-list-item>
+  </mat-toolbar>
+
+  <!-- sidemenu -->
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <mat-list class="sidenav-list">
+      <mat-list-item class="sidenav-list-item">
+        <a i18n="@@tutorial-button" [routerLink]="['/']">Tutorials</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a i18n="@@template-button" [routerLink]="['/templates']">Templates</a>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+
+  <router-outlet></router-outlet>
+</mat-drawer-container>

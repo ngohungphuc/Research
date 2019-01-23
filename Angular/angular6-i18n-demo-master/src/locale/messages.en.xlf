@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="toolbar-title" datatype="html">
+        <source>My Application</source>
+        <target>My Application</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="tutorial-button" datatype="html">
+        <source>Tutorials</source>
+        <target>Tutorials</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="template-button" datatype="html">
+        <source>Templates</source>
+        <target>Templates</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="homeTitle" datatype="html">
+        <source>Tutorials</source>
+        <target>Tutorials</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tutorials/tutorials.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FirstParagraphTutorials" datatype="html">
+        <source>
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Firebase Authentication with Angular<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>: When developing web applications, any
+      type of authentication feature is necessary. If you think of the many social
+      platforms and email sign in options available, authentication looks like a
+      very complex task. In this Angular 5 tutorial we will explore how to setup
+      an email/password as well as social login authentication workflows for
+      Angular 5 apps using AngularFire2 library.
+    </source>
+        <target>
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Firebase Authentication with Angular<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>: When developing web applications, any
+      type of authentication feature is necessary. If you think of the many social
+      platforms and email sign in options available, authentication looks like a
+      very complex task. In this Angular 5 tutorial we will explore how to setup
+      an email/password as well as social login authentication workflows for
+      Angular 5 apps using AngularFire2 library.
+    </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tutorials/tutorials.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SecondParagraphTutorials" datatype="html">
+        <source>
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Learn Angular from scratch step by step<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>: Angular step by step tutorial
+      covering from basic concepts of Angular Framework to building a complete
+      Angular 5 app using Angular Material components. We will go through the main
+      building blocks of an Angular application as well as the best practices for
+      building a complete app with Angular. Also, this tutorial shows how to setup
+      your development environment and workflow so you can start developing Angular
+      apps right away.
+    </source>
+        <target>
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Learn Angular from scratch step by step<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>: Angular step by step tutorial
+      covering from basic concepts of Angular Framework to building a complete
+      Angular 5 app using Angular Material components. We will go through the main
+      building blocks of an Angular application as well as the best practices for
+      building a complete app with Angular. Also, this tutorial shows how to setup
+      your development environment and workflow so you can start developing Angular
+      apps right away.
+    </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tutorials/tutorials.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ThirdParagraphTutorials" datatype="html">
+        <source>
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Angular 5 Forms and Validations<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>: We created this angular forms
+      tutorial to help you learn everything about Angular forms validations in
+      angular 5 apps. These angular forms examples are updated using the best
+      (coding) practices to build Angular 5 apps with Material Design.
+    </source>
+        <target>
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Angular 5 Forms and Validations<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>: We created this angular forms
+      tutorial to help you learn everything about Angular forms validations in
+      angular 5 apps. These angular forms examples are updated using the best
+      (coding) practices to build Angular 5 apps with Material Design.
+    </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tutorials/tutorials.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FourthParagraphTutorials" datatype="html">
+        <source>
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Learn how to build a MEAN stack application in this Angular tutorial<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>:
+      The goal of this Angular tutorial is to guide you through the coding of a
+      full-stack JavaScript example application project and connecting a backend
+      API to an Angular 5 front-end application employing the MEAN stack. By the
+      end of this Angular advanced tutorial, you will learn about the MEAN stack
+      from scratch, including how to build a RESTful API with Loopback and using
+      it to perform CRUD operations on a MongoDB database through an Angular
+      frontend.
+    </source>
+        <target>
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Learn how to build a MEAN stack application in this Angular tutorial<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>:
+      The goal of this Angular tutorial is to guide you through the coding of a
+      full-stack JavaScript example application project and connecting a backend
+      API to an Angular 5 front-end application employing the MEAN stack. By the
+      end of this Angular advanced tutorial, you will learn about the MEAN stack
+      from scratch, including how to build a RESTful API with Loopback and using
+      it to perform CRUD operations on a MongoDB database through an Angular
+      frontend.
+    </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tutorials/tutorials.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitle" datatype="html">
+        <source>
+      Templates
+    </source>
+        <target>
+      Templates
+    </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/templates/templates.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FirstParagraphTemplates" datatype="html">
+        <source>
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Angular 6 Site Template<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>: Reuse the beautiful, responsive and flexible
+      custom components we built for this Angular 6 Template. With Bootstrap 4,
+      Angular Universal (Server Side Rendering), SEO, Lazy Loading and a detailed
+      documentation on how to get started building Angular apps. Tons of use cases
+      implemented the Angular way such as authentication flows, product listing,
+      filtering, forms, routing guards and more.
+    </source>
+        <target>
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Angular 6 Site Template<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>: Reuse the beautiful, responsive and flexible
+      custom components we built for this Angular 6 Template. With Bootstrap 4,
+      Angular Universal (Server Side Rendering), SEO, Lazy Loading and a detailed
+      documentation on how to get started building Angular apps. Tons of use cases
+      implemented the Angular way such as authentication flows, product listing,
+      filtering, forms, routing guards and more.
+    </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/templates/templates.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SecondParagraphTemplates" datatype="html">
+        <source>
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Angular Admin Template<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>: Created with performance and ease of
+      development in mind, this Angular 5 web template is something you will love.
+      It includes all the components that you might need inside a project and a
+      detailed documentation on how to get started.
+    </source>
+        <target>
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Angular Admin Template<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>: Created with performance and ease of
+      development in mind, this Angular 5 web template is something you will love.
+      It includes all the components that you might need inside a project and a
+      detailed documentation on how to get started.
+    </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/templates/templates.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="notFoundTitle" datatype="html">
+        <source>
+    Not found 404
+  </source>
+    <target>Not found 404</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/404/404.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

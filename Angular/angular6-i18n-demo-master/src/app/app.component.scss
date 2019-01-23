@@ -1,0 +1,41 @@
+.sidenav {
+  background-color: #ddd;
+
+  .sidenav-list {
+    margin-top: 60px;
+    color: #FFF;
+
+    .sidenav-list-item {
+      color: #FFF;
+    }
+  }
+}
+
+.toolbar {
+
+  background-color: #DD0031;
+
+  .menu-icon{
+    margin-right: 20px;
+    color: #FFF;
+  }
+
+  .title {
+    color: #FFF;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .lang-title {
+    color: #FFF;
+    font-size: 16px;
+  }
+
+  .lang-option {
+    color: #FFF;
+    margin-right: 15px;
+    font-size: 16px;
+  }
+}
