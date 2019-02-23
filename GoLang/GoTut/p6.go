@@ -14,6 +14,7 @@ type car struct {
 	top_speed_kmh  float64
 }
 
+//value receiver
 func (c car) kmh() float64 {
 	return float64(c.gas_pedal) * (c.top_speed_kmh / usixteenbitmax)
 }
