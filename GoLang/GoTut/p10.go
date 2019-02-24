@@ -27,6 +27,7 @@ func main() {
 	var s SiteMapIndex
 	xml.Unmarshal(bytes, &s)
 
+	//_ stand for index
 	for _, Location := range s.Locations {
 		fmt.Printf("\n%s", Location)
 	}
