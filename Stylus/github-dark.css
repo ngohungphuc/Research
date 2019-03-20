@@ -8937,3 +8937,7 @@ body.blog .highlight .il {
 .user-status-message-wrapper{
     color: #bababa !important;
 }
+
+.MarketplaceBackground-buffer {
+    background: #1c1c1c;
+}
