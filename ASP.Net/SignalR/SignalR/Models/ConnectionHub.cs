@@ -18,10 +18,5 @@ namespace SignalR.Models
         {
             return Context.ConnectionId;
         }
-
-        public void SendMessageToSpecificUser()
-        {
-
-        }
     }
 }
