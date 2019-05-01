@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <button id="sendmessage">Send message to user</button>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/signalr/signalr.min.js"></script>
+<script>
+
+    (function () {
+        var connection = new signalR.HubConnectionBuilder().withUrl("/connectionHub").build();
+
+        connection.start().then(function () {
+            console.log("connected");
+
+            connection.invoke('getConnectionId')
+                .then(function (connectionId) {
+                    sessionStorage.setItem('conectionId', connectionId);
+                    // Send the connectionId to controller
+                }).catch(err => console.error(err.toString()));;
+
+
+        });
+
+        $("#sendmessage").click(function () {
+            var connectionId = sessionStorage.getItem('conectionId');
+            connection.invoke("Send", connectionId);
+        });
+
+        connection.on("ReceiveMessage", function (message) {
+            console.log(message);
+        });
+
+    })();
+
+
+
+</script>
