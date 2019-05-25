@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Reflection;
 using Localization.Resources;
+using Localization.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
@@ -28,13 +26,31 @@ namespace Localization
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<LocalizationService>();
             services.AddLocalization(options => options.ResourcesPath = "Resources");
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
-                .AddViewLocalization(options => options.ResourcesPath = "Resources")
+
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                var supportedCultures = new[]
+                {
+                new CultureInfo("en"),
+                new CultureInfo("nl")
+            };
+
+                options.DefaultRequestCulture = new RequestCulture(culture: "en", uiCulture: "en");
+                options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+            });
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddViewLocalization()
                 .AddDataAnnotationsLocalization(options =>
                 {
-                    options.DataAnnotationLocalizerProvider = (type, localizerFactory) =>
-                        localizerFactory.Create(typeof(Resource));
+                    options.DataAnnotationLocalizerProvider = (type, factory) =>
+                    {
+                        var assemblyName = new AssemblyName(typeof(SharedResource).GetTypeInfo().Assembly.FullName);
+                        return factory.Create("SharedResource", assemblyName.Name);
+                    };
                 });
         }
 
@@ -50,21 +66,8 @@ namespace Localization
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            var supportedCultures = new List<CultureInfo>
-            {
-                new CultureInfo("en"),
-                new CultureInfo("nl")
-            };
-
-            var options = new RequestLocalizationOptions
-            {
-                DefaultRequestCulture = new RequestCulture("en"),
-                SupportedCultures = supportedCultures,
-                SupportedUICultures = supportedCultures
-            };
-
-            app.UseRequestLocalization(options);
-
+            var localizationOption = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(localizationOption.Value);
 
             app.UseStaticFiles();
             app.UseCookiePolicy();

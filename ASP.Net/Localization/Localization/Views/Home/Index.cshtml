@@ -4,9 +4,9 @@
 
 @using Microsoft.AspNetCore.Mvc.Localization
 @using Localization.Resources
-@inject IHtmlLocalizer<Resource> SharedLocalizer
-
+@using Localization.Services
+@inject LocalizationService LocalizationService
 <div class="text-center">
-    <h1 class="display-4">@SharedLocalizer["Welcome"]</h1>
+    <h1 class="display-4">@LocalizationService.GetLocalizedHtmlString("Welcome")</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

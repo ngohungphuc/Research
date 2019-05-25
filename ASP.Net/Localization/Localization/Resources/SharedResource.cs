@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Localization.Resources
 {
-    public class Resource
+    public class SharedResource
     {
     }
 }
