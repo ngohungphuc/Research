@@ -33,9 +33,9 @@ namespace Localization
             {
                 var supportedCultures = new[]
                 {
-                new CultureInfo("en"),
-                new CultureInfo("nl")
-            };
+                    new CultureInfo("en"),
+                    new CultureInfo("nl")
+                };
 
                 options.DefaultRequestCulture = new RequestCulture(culture: "en", uiCulture: "en");
                 options.SupportedCultures = supportedCultures;
