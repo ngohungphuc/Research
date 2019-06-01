@@ -11,7 +11,23 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get('api/Data/Posts').subscribe(result => {
+    const query = `?query=
+    {
+      posts (id:10){
+        id
+        title
+        body
+        userId
+        comment {
+          id
+          email
+          body
+          name
+          postId
+        }
+      }
+    }`;
+    this.http.get(`graphql/query=${query}`).subscribe(result => {
       console.log(result);
     }, error => console.error(error));
   }
