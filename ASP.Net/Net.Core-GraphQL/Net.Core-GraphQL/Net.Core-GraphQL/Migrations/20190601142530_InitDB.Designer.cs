@@ -9,7 +9,7 @@ using Net.Core_GraphQL.Models;
 namespace Net.Core_GraphQL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20190601140737_InitDB")]
+    [Migration("20190601142530_InitDB")]
     partial class InitDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,6 +34,8 @@ namespace Net.Core_GraphQL.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PostId");
+
                     b.ToTable("Comments");
                 });
 
@@ -50,6 +52,14 @@ namespace Net.Core_GraphQL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Posts");
+                });
+
+            modelBuilder.Entity("Net.Core_GraphQL.Models.Comment", b =>
+                {
+                    b.HasOne("Net.Core_GraphQL.Models.Post", "Post")
+                        .WithMany("Comments")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

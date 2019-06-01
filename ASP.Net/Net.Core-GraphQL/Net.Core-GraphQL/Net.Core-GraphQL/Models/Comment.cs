@@ -4,6 +4,8 @@ namespace Net.Core_GraphQL.Models
 {
     public class Comment
     {
+        [ForeignKey("PostId")]
+        public Post Post { get; set; }
         public int PostId { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }

@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Net.Core_GraphQL.Models
 {
@@ -9,5 +11,6 @@ namespace Net.Core_GraphQL.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
+        public ICollection<Comment> Comments { get; set; }
     }
 }

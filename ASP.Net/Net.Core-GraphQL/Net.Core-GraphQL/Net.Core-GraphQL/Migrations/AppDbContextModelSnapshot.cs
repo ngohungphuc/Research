@@ -32,6 +32,8 @@ namespace Net.Core_GraphQL.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PostId");
+
                     b.ToTable("Comments");
                 });
 
@@ -48,6 +50,14 @@ namespace Net.Core_GraphQL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Posts");
+                });
+
+            modelBuilder.Entity("Net.Core_GraphQL.Models.Comment", b =>
+                {
+                    b.HasOne("Net.Core_GraphQL.Models.Post", "Post")
+                        .WithMany("Comments")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
