@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Net.Core_GraphQL.Models;
+using Net.Core_GraphQL.Services;
 using System.IO;
 
 namespace Net.Core_GraphQL
@@ -33,7 +34,7 @@ namespace Net.Core_GraphQL
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-
+            services.AddTransient<Repository>();
             services.AddTransient<Seeder>();
         }
 

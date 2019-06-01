@@ -26,24 +26,18 @@ namespace Net.Core_GraphQL.Models
                 ContractResolver = new PrivateSetterContractResolver()
 
             };
-            _context.Database.EnsureDeleted();
-            _context.Database.EnsureCreated();
 
             List<Post> posts = JsonConvert.DeserializeObject<List<Post>>(postData, settings);
-            List<Post> comments = JsonConvert.DeserializeObject<List<Post>>(commentData, settings);
+            List<Comment> comments = JsonConvert.DeserializeObject<List<Comment>>(commentData, settings);
 
             if (!_context.Posts.Any())
             {
-                _context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.Posts ON");
                 _context.AddRange(posts);
                 _context.SaveChanges();
             }
 
-
             if (!_context.Comments.Any())
             {
-
-                _context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.Comments ON");
                 _context.AddRange(comments);
                 _context.SaveChanges();
             }
