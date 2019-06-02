@@ -1,9 +1,7 @@
 ﻿using GraphQL.Types;
 using Net.Core_GraphQL.Services;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Net.Core_GraphQL.GraqhQL
 {
@@ -56,7 +54,7 @@ namespace Net.Core_GraphQL.GraqhQL
                     {
                         return query.Where(r => r.Body == body);
                     }
-                
+
 
                     var userId = context.GetArgument<int?>("userId");
                     if (userId.HasValue)

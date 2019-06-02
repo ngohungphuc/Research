@@ -1,10 +1,7 @@
 ﻿using GraphQL.Types;
 using Net.Core_GraphQL.Models;
 using Net.Core_GraphQL.Services;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Net.Core_GraphQL.GraqhQL
 {

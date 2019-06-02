@@ -1,17 +1,13 @@
 ﻿using JsonNet.PrivateSettersContractResolvers;
-using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Net.Core_GraphQL.Models
 {
     public class Seeder
     {
-        AppDbContext _context;
-
+        private readonly AppDbContext _context;
 
         public Seeder(AppDbContext context)
         {
