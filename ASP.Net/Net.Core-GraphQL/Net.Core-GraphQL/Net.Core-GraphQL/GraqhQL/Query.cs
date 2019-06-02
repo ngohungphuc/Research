@@ -65,7 +65,6 @@ namespace Net.Core_GraphQL.GraqhQL
                     return query.ToList();
                 }
             );
-
         }
     }
 }

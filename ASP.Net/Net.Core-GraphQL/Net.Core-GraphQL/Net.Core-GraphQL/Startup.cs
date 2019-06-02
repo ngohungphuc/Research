@@ -27,7 +27,6 @@ namespace Net.Core_GraphQL
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var str = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services
@@ -43,8 +42,8 @@ namespace Net.Core_GraphQL
                 configuration.RootPath = "ClientApp/dist";
             });
 
-            services.AddTransient<Repository>();
-            services.AddTransient<Seeder>();
+            services.AddScoped<Repository>();
+            services.AddScoped<Seeder>();
 
             services.AddScoped<IDependencyResolver>(x => new FuncDependencyResolver(x.GetRequiredService));
 
