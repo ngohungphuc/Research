@@ -27,6 +27,7 @@ class App extends Component {
           height="600"
           language="javascript"
           value={code}
+          theme="vs-dark"
           original={originalCode}
           options={options}
           onChange={this.onChange}
@@ -35,7 +36,7 @@ class App extends Component {
         <MonacoEditor
           height="600"
           language="javascript"
-          theme="vs-light"
+          theme="vs-dark"
           value={code}
           options={options}
           onChange={this.onChange}
