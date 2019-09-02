@@ -9,7 +9,24 @@
     <title>Document</title>
   </head>
   <body>
-    {{ insert_me }}
-    <img src="{% static "images/abstract_triangles-HD.jpg" %}">
+   {% comment %}  {{ insert_me }} {% endcomment %}
+    {% comment %} <img src="{% static "images/abstract_triangles-HD.jpg" %}"> {% endcomment %}
+     {% if access_records %}
+    <table>
+      <thead>
+        <th>Site name</th>
+        <th>Date Access</th>
+      </thead>
+
+      {%for acc in access_records %}
+      <tr>
+        <td>{{acc.name}}</td>
+        <td>{{acc.date}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p> No access record found</p>
+    {% endif %}
   </body>
 </html>
