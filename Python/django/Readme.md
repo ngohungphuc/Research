@@ -16,4 +16,6 @@ python manage.py makemigrations first_app
 python manage.py shell
 
 python manage.py createsuperuser
+
+pip install Faker
 ```
