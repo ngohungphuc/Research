@@ -1,6 +1,10 @@
 # Command 
 
 ```
+conda create --name MyDjangoEnv django
+
+conda install sqlparse
+
 conda activate MyDjangoEnv
 
 django-admin startproject first_project
