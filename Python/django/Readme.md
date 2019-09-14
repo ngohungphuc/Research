@@ -22,4 +22,8 @@ python manage.py shell
 python manage.py createsuperuser
 
 pip install Faker
+
+pip install bcrypt
+
+pip install django[argon2]
 ```
