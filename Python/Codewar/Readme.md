@@ -11,7 +11,7 @@ friend ["Ryan", "Kieran", "Mark"] `shouldBe` ["Ryan", "Mark"]
 Note: keep the original order of the names in the output. 
 
 ## Answer
-```
+```python
 def friend(x):
     #Code
     itemList = []
@@ -20,3 +20,20 @@ def friend(x):
             itemList.append(item)
     return itemList        
 ```            
+
+# Question
+
+Welcome. In this kata, you are asked to square every digit of a number.
+
+For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
+
+Note: The function accepts an integer and returns an integer
+
+## Answer
+```python
+def square_digits(num):
+    result = ""
+    for d in str(num):
+        result += str(int(d)**2)
+    return int(result)    
+```
