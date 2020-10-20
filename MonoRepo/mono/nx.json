@@ -1,0 +1,53 @@
+{
+  "npmScope": "mono",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "accessToken": "ZDViNzdkYzYtNDg3ZC00NWVmLTg5NjItMmNkM2U5M2M5ODRkfHJlYWQtd3JpdGU=",
+        "cacheableOperations": [
+          "build",
+          "test",
+          "lint",
+          "e2e"
+        ],
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
+      }
+    }
+  },
+  "projects": {
+    "mono": {
+      "tags": []
+    },
+    "mono-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "mono"
+      ]
+    },
+    "shared-ui": {
+      "tags": []
+    },
+    "shared-ui-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "shared-ui"
+      ]
+    }
+  }
+}
