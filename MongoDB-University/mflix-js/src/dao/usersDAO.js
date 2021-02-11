@@ -39,7 +39,7 @@ export default class UsersDAO {
   static async getUser(email) {
     // TODO Ticket: User Management
     // Retrieve the user document corresponding with the user's email.
-    return await users.findOne({ someField: "someValue" })
+    return await users.findOne({ email })
   }
 
   /**
@@ -60,7 +60,7 @@ export default class UsersDAO {
       // Insert a user with the "name", "email", and "password" fields.
       // TODO Ticket: Durable Writes
       // Use a more durable Write Concern for this operation.
-      await users.insertOne({ someField: "someValue" })
+      await users.insertOne({ ...userInfo })
       return { success: true }
     } catch (e) {
       if (String(e).startsWith("MongoError: E11000 duplicate key error")) {
@@ -83,8 +83,9 @@ export default class UsersDAO {
       // Use an UPSERT statement to update the "jwt" field in the document,
       // matching the "user_id" field with the email passed to this function.
       await sessions.updateOne(
-        { someField: "someValue" },
-        { $set: { someOtherField: "someOtherValue" } },
+        { user_id: email },
+        { $set: { jwt } },
+        { upsert: true },
       )
       return { success: true }
     } catch (e) {
@@ -102,7 +103,7 @@ export default class UsersDAO {
     try {
       // TODO Ticket: User Management
       // Delete the document in the `sessions` collection matching the email.
-      await sessions.deleteOne({ someField: "someValue" })
+      await sessions.deleteOne({ user_id: email })
       return { success: true }
     } catch (e) {
       console.error(`Error occurred while logging out user, ${e}`)
@@ -120,7 +121,7 @@ export default class UsersDAO {
     try {
       // TODO Ticket: User Management
       // Retrieve the session document corresponding with the user's email.
-      return sessions.findOne({ someField: "someValue" })
+      return sessions.findOne({ user_id: email })
     } catch (e) {
       console.error(`Error occurred while retrieving user session, ${e}`)
       return null
