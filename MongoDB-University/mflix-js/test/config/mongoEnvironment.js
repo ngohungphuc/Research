@@ -9,7 +9,7 @@ module.exports = class MongoEnvironment extends NodeEnvironment {
         // Set the connection pool size to 50 for the testing environment.
         // TODO: Timeouts
         // Set the write timeout limit to 2500 milliseconds for the testing environment.
-        { useNewUrlParser: true, useUnifiedTopology: true },
+        { poolSize: 50, useNewUrlParser: true, useUnifiedTopology: true },
       )
       await super.setup()
     }
