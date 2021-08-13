@@ -1,0 +1,28 @@
+version: '2'
+services:
+  nginx:
+    image: nginx:1-alpine
+    volumes:
+     - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+     - ./nginx/common:/usr/share/nginx/html/common
+    ports:
+     - "3000:3000"
+    depends_on:
+     - team_blue
+     - team_green
+     - team_red
+
+  team_blue:
+    build: ./team-blue
+    ports:
+     - "3001:3001"
+
+  team_green:
+    build: ./team-green
+    ports:
+     - "3002:3002"
+
+  team_red:
+    build: ./team-red
+    ports:
+     - "3003:3003"

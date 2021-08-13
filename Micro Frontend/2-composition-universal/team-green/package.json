@@ -1,0 +1,22 @@
+{
+  "name": "team-green",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "build": "rollup src/client.js --file build/fragments.js --format iife",
+    "server": "node --experimental-modules ./src/server.js",
+    "start": "npm run build; npm run server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "rollup": "^1.32.1"
+  }
+}
