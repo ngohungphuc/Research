@@ -8,7 +8,9 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "dep-graph": "nx dep-graph"
+    "dep-graph": "nx dep-graph",
+    "affected:dep-graph": "nx graph affected",
+    "affected:libs": "nx affected --target=libs --all"
   },
   "private": true,
   "dependencies": {
