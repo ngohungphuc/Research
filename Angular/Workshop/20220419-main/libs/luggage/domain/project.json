@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/luggage/domain",
+  "sourceRoot": "libs/luggage/domain/src",
+  "prefix": "luggage",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/luggage/domain"],
+      "options": {
+        "project": "libs/luggage/domain/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/luggage/domain/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/luggage/domain/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/luggage/domain"],
+      "options": {
+        "jestConfig": "libs/luggage/domain/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/luggage/domain/src/**/*.ts",
+          "libs/luggage/domain/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:luggage", "type:domain-logic"]
+}

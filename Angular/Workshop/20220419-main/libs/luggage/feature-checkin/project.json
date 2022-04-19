@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/luggage/feature-checkin",
+  "sourceRoot": "libs/luggage/feature-checkin/src",
+  "prefix": "luggage",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/luggage/feature-checkin"],
+      "options": {
+        "project": "libs/luggage/feature-checkin/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/luggage/feature-checkin/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/luggage/feature-checkin/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/luggage/feature-checkin"],
+      "options": {
+        "jestConfig": "libs/luggage/feature-checkin/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/luggage/feature-checkin/src/**/*.ts",
+          "libs/luggage/feature-checkin/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:luggage", "type:feature"]
+}

@@ -13,15 +13,8 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
-              },
-              {
                 "sourceTag": "domain:flights",
-                "onlyDependOnLibsWithTags": [
-                  "domain:flights",
-                  "domain:shared"
-                ]
+                "onlyDependOnLibsWithTags": ["domain:flights", "domain:shared"]
               },
               {
                 "sourceTag": "domain:dashboard",
@@ -32,10 +25,7 @@
               },
               {
                 "sourceTag": "domain:external",
-                "onlyDependOnLibsWithTags": [
-                  "domain:external",
-                  "domain:shared"
-                ]
+                "onlyDependOnLibsWithTags": ["domain:external", "domain:shared"]
               },
               {
                 "sourceTag": "domain:passenger",
@@ -43,6 +33,48 @@
                   "domain:passenger",
                   "domain:shared"
                 ]
+              },
+              {
+                "sourceTag": "type:app",
+                "onlyDependOnLibsWithTags": [
+                  "type:api",
+                  "type:feature",
+                  "type:ui",
+                  "type:domain-logic",
+                  "type:util"
+                ]
+              },
+              {
+                "sourceTag": "type:api",
+                "onlyDependOnLibsWithTags": [
+                  "type:ui",
+                  "type:domain-logic",
+                  "type:util"
+                ]
+              },
+              {
+                "sourceTag": "type:feature",
+                "onlyDependOnLibsWithTags": [
+                  "type:ui",
+                  "type:domain-logic",
+                  "type:util"
+                ]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": ["type:domain-logic", "type:util"]
+              },
+              {
+                "sourceTag": "type:domain-logic",
+                "onlyDependOnLibsWithTags": ["type:util"]
+              },
+              {
+                "sourceTag": "domain:shared",
+                "onlyDependOnLibsWithTags": ["domain:shared"]
+              },
+              {
+                "sourceTag": "domain:luggage",
+                "onlyDependOnLibsWithTags": ["domain:luggage", "domain:shared"]
               }
             ]
           }
