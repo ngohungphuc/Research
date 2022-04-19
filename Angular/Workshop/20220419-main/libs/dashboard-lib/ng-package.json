@@ -1,0 +1,7 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/libs/dashboard-lib",
+  "lib": {
+    "entryFile": "src/index.ts"
+  }
+}

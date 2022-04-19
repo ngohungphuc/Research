@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="header">
+    <h1 class="title">External</h1>
+  </div>
+  <div class="content">
+    <div style="height:200px;">
+      <br>
+      <table *ngIf="data$ | async as data" class="table table-contensed">
+        <tr>
+          <td>A</td>
+          <td>{{data.a}}</td>
+        </tr>
+        <tr>
+          <td>B</td>
+          <td>{{data.b}}</td>
+        </tr>
+        <tr>
+          <td>C</td>
+          <td>{{data.c}}</td>
+        </tr>
+      </table>
+
+      <button class="btn btn-default btn-sm" (click)="more()">More »</button>
+      
+    </div>
+  </div>
+</div>

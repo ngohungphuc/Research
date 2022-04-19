@@ -1,0 +1,41 @@
+<div class="sidebar-wrapper">
+  <div class="logo">
+    <a class="simple-text">
+      <div class="logo-img">
+        <img alt="" src="../../assets/img/angular2-logo.png" />
+      </div>
+      Flight42
+    </a>
+  </div>
+  <ul class="nav">
+    <li routerLinkActive="active">
+      <a routerLink="home">
+        <i class="ti-home"></i>
+        <p>Home</p>
+      </a>
+    </li>
+
+    <li routerLinkActive="active">
+      <a routerLink="flight-booking/flight-search">
+        <i class="ti-arrow-top-right"></i>
+        <p>Flights</p>
+      </a>
+    </li>
+
+    <li routerLinkActive="active">
+      <a [routerLink]="[{ outlets: { aux: 'basket' } }]">
+        <i class="ti-shopping-cart"></i>
+        <p>Basket</p>
+      </a>
+    </li>
+
+    <!--
+        <li routerLinkActive="active">
+        <a>
+            <i class="ti-close"></i>
+            <p>Hide Basket</p>
+        </a>
+        </li>
+    -->
+  </ul>
+</div>

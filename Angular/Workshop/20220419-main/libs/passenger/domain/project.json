@@ -1,0 +1,49 @@
+{
+  "projectType": "library",
+  "root": "libs/passenger/domain",
+  "sourceRoot": "libs/passenger/domain/src",
+  "prefix": "flight-workspace",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": [
+        "dist/libs/passenger/domain"
+      ],
+      "options": {
+        "project": "libs/passenger/domain/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/passenger/domain/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/passenger/domain/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/passenger/domain"
+      ],
+      "options": {
+        "jestConfig": "libs/passenger/domain/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/passenger/domain/src/**/*.ts",
+          "libs/passenger/domain/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": [
+    "domain:passenger",
+    "type:domain-logic"
+  ]
+}

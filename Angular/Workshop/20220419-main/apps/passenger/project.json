@@ -1,0 +1,106 @@
+{
+  "projectType": "application",
+  "root": "apps/passenger",
+  "sourceRoot": "apps/passenger/src",
+  "prefix": "flight-workspace",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/passenger",
+        "index": "apps/passenger/src/index.html",
+        "main": "apps/passenger/src/main.ts",
+        "polyfills": "apps/passenger/src/polyfills.ts",
+        "tsConfig": "apps/passenger/tsconfig.app.json",
+        "assets": [
+          "apps/passenger/src/favicon.ico",
+          "apps/passenger/src/assets"
+        ],
+        "styles": [
+          "apps/passenger/src/styles.css",
+          "apps/flight-app/src/assets/css/bootstrap.min.css",
+          "apps/flight-app/src/assets/css/paper-dashboard.css",
+          "apps/flight-app/src/assets/css/demo.css",
+          "apps/flight-app/src/assets/css/themify-icons.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/passenger/src/environments/environment.ts",
+              "with": "apps/passenger/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "passenger:build:production"
+        },
+        "development": {
+          "browserTarget": "passenger:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "passenger:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/passenger/src/**/*.ts",
+          "apps/passenger/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/passenger"
+      ],
+      "options": {
+        "jestConfig": "apps/passenger/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": [
+    "domain:passenger",
+    "type:app"
+  ]
+}

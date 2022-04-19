@@ -1,0 +1,49 @@
+{
+  "projectType": "library",
+  "root": "libs/dashboard-lib",
+  "sourceRoot": "libs/dashboard-lib/src",
+  "prefix": "flight-workspace",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": [
+        "dist/libs/dashboard-lib"
+      ],
+      "options": {
+        "project": "libs/dashboard-lib/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/dashboard-lib/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/dashboard-lib/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/dashboard-lib"
+      ],
+      "options": {
+        "jestConfig": "libs/dashboard-lib/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/dashboard-lib/src/**/*.ts",
+          "libs/dashboard-lib/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": [
+    "domain:dashboard",
+    "type:domain-logic"
+  ]
+}

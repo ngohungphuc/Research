@@ -1,0 +1,36 @@
+{
+  "root": "apps/passenger-e2e",
+  "sourceRoot": "apps/passenger-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/passenger-e2e/cypress.json",
+        "devServerTarget": "passenger:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "passenger:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/passenger-e2e/**/*.{js,ts}"
+        ]
+      }
+    }
+  },
+  "tags": [
+    "e2e"
+  ],
+  "implicitDependencies": [
+    "passenger"
+  ]
+}

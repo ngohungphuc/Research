@@ -1,0 +1,49 @@
+{
+  "projectType": "library",
+  "root": "libs/logger-lib",
+  "sourceRoot": "libs/logger-lib/src",
+  "prefix": "flight-workspace",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": [
+        "dist/libs/logger-lib"
+      ],
+      "options": {
+        "project": "libs/logger-lib/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/logger-lib/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/logger-lib/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/logger-lib"
+      ],
+      "options": {
+        "jestConfig": "libs/logger-lib/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/logger-lib/src/**/*.ts",
+          "libs/logger-lib/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": [
+    "domain:shared",
+    "type:util"
+  ]
+}

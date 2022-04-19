@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "projects": {
+    "dashboard": "apps/dashboard",
+    "dashboard-e2e": "apps/dashboard-e2e",
+    "dashboard-lib": "libs/dashboard-lib",
+    "external": "apps/external",
+    "external-e2e": "apps/external-e2e",
+    "flight-admin": "apps/flight-admin",
+    "flight-admin-e2e": "apps/flight-admin-e2e",
+    "flight-app": "apps/flight-app",
+    "flight-app-e2e": "apps/flight-app-e2e",
+    "flight-lib": "libs/flight-lib",
+    "logger-lib": "libs/logger-lib",
+    "passenger": "apps/passenger",
+    "passenger-domain": "libs/passenger/domain",
+    "passenger-e2e": "apps/passenger-e2e",
+    "passenger-feature-edit": "libs/passenger/feature-edit",
+    "passenger-feature-search": "libs/passenger/feature-search"
+  }
+}

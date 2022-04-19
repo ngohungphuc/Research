@@ -1,0 +1,63 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nrwl/nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              },
+              {
+                "sourceTag": "domain:flights",
+                "onlyDependOnLibsWithTags": [
+                  "domain:flights",
+                  "domain:shared"
+                ]
+              },
+              {
+                "sourceTag": "domain:dashboard",
+                "onlyDependOnLibsWithTags": [
+                  "domain:dashboard",
+                  "domain:shared"
+                ]
+              },
+              {
+                "sourceTag": "domain:external",
+                "onlyDependOnLibsWithTags": [
+                  "domain:external",
+                  "domain:shared"
+                ]
+              },
+              {
+                "sourceTag": "domain:passenger",
+                "onlyDependOnLibsWithTags": [
+                  "domain:passenger",
+                  "domain:shared"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
+      "rules": {}
+    }
+  ]
+}
