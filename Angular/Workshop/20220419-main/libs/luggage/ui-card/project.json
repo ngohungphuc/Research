@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/luggage/ui-card",
+  "sourceRoot": "libs/luggage/ui-card/src",
+  "prefix": "flight-workspace",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/luggage/ui-card"],
+      "options": {
+        "project": "libs/luggage/ui-card/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/luggage/ui-card/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/luggage/ui-card/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/luggage/ui-card"],
+      "options": {
+        "jestConfig": "libs/luggage/ui-card/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/luggage/ui-card/src/**/*.ts",
+          "libs/luggage/ui-card/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

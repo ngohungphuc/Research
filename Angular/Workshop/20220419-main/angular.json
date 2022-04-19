@@ -17,6 +17,7 @@
     "luggage-e2e": "apps/luggage-e2e",
     "luggage-feature-checkin": "libs/luggage/feature-checkin",
     "luggage-feature-report-loss": "libs/luggage/feature-report-loss",
+    "luggage-ui-card": "libs/luggage/ui-card",
     "passenger": "apps/passenger",
     "passenger-domain": "libs/passenger/domain",
     "passenger-e2e": "apps/passenger-e2e",
