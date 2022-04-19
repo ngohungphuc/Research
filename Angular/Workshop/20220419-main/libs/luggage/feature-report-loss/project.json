@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/luggage/feature-report-loss",
+  "sourceRoot": "libs/luggage/feature-report-loss/src",
+  "prefix": "luggage",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/luggage/feature-report-loss"],
+      "options": {
+        "project": "libs/luggage/feature-report-loss/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/luggage/feature-report-loss/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/luggage/feature-report-loss/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/luggage/feature-report-loss"],
+      "options": {
+        "jestConfig": "libs/luggage/feature-report-loss/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/luggage/feature-report-loss/src/**/*.ts",
+          "libs/luggage/feature-report-loss/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:luggage", "type:feature"]
+}
